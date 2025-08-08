@@ -17,6 +17,7 @@ export default function Navbar() {
           <Link href='#projects' className='hover:text-orange-600'>
             Projects
           </Link>
+          <Link href='#projects' className='hover:text-orange-600'></Link>
           <Link href='#contact' className='hover:text-orange-600'>
             Contact
           </Link>
