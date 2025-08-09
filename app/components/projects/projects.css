@@ -1,0 +1,13 @@
+/* Projects.css */
+.projects-section {
+  background: linear-gradient(to bottom, #fff7f3, #ffe9e0);
+  padding: 4rem 0;
+}
+
+.projects-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff6f4e; /* Matches your orange accent */
+  margin-bottom: 2rem;
+}

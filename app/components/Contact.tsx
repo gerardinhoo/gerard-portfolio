@@ -3,10 +3,7 @@ import { MdEmail } from 'react-icons/md';
 
 export default function Contact() {
   return (
-    <section
-      id='contact'
-      className='py-20 px-4 bg-[#FDF3ED] text-black font-big-shoulders'
-    >
+    <section id='contact' className='py-20 bg-white'>
       <div className='max-w-3xl mx-auto text-center'>
         <h2 className='text-4xl font-bold mb-6 text-[#F07050]'>
           Let's Connect
@@ -18,12 +15,12 @@ export default function Contact() {
         </p>
 
         <div className='flex justify-center gap-6 flex-wrap'>
-          <a
+          {/* <a
             href='mailto:youremail@example.com'
             className='flex items-center gap-2 px-5 py-3 bg-[#F07050] text-white rounded hover:bg-orange-600 transition'
           >
             <MdEmail size={18} /> Email Me
-          </a>
+          </a> */}
 
           <a
             href='https://github.com/yourusername'

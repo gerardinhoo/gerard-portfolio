@@ -44,8 +44,23 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section className='py-20 px-4 bg-[#FDF3ED] dark:bg-[#1a1a1a] text-black dark:text-white'>
-      <div className='max-w-6xl mx-auto text-center'>
+    <section
+      id='skills'
+      className='relative py-20 pt-24 pb-28 px-4 bg-[#F3E2DA] dark:bg-[#1a1a1a] text-black dark:text-white overflow-hidden'
+    >
+      {/* Top wave (mirror vertically) */}
+      <svg
+        className='pointer-events-none absolute top-0 left-0 w-full h-24 -scale-y-100'
+        viewBox='0 0 1440 120'
+        preserveAspectRatio='none'
+        aria-hidden='true'
+      >
+        <path
+          d='M0,64L60,58.7C120,53,240,43,360,48C480,53,600,75,720,85.3C840,96,960,96,1080,90.7C1200,85,1320,75,1380,69.3L1440,64L1440,0L0,0Z'
+          fill='#ffffff'
+        />
+      </svg>
+      <div className='max-w-6xl mx-auto text-center mt-10'>
         <motion.h2
           className='text-4xl font-bold mb-12 text-[#F07050]'
           initial={{ opacity: 0, y: -30 }}
@@ -95,6 +110,19 @@ export default function Skills() {
           ))}
         </div>
       </div>
+
+      {/* Bottom wave */}
+      <svg
+        className='pointer-events-none absolute bottom-0 left-0 w-full h-24'
+        viewBox='0 0 1440 120'
+        preserveAspectRatio='none'
+        aria-hidden='true'
+      >
+        <path
+          d='M0,64L60,58.7C120,53,240,43,360,48C480,53,600,75,720,85.3C840,96,960,96,1080,90.7C1200,85,1320,75,1380,69.3L1440,64L1440,120L0,120Z'
+          fill='#ffffff'
+        />
+      </svg>
     </section>
   );
 }

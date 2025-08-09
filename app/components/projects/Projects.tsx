@@ -1,21 +1,52 @@
-import ProjectCard from './ProjectCard';
+import ProjectCard from '../ProjectCard';
+import './projects.css';
 
 export default function Projects() {
   return (
     <section
       id='projects'
-      className='py-20 px-4 bg-white text-black font-big-shoulders'
+      className='
+        projects-section
+        scroll-mt-24
+        px-4 sm:px-6
+        py-16 sm:py-20 md:py-24
+      '
     >
       <div className='max-w-6xl mx-auto'>
-        <h2 className='text-4xl font-bold mb-10 text-center text-[#F07050]'>
+        {/* Section title */}
+        <h2
+          className='
+            projects-title
+            text-[clamp(2rem,6vw,3rem)]
+            text-center font-bold
+            mb-10 md:mb-12
+            text-[#F07050]
+          '
+        >
           Projects
         </h2>
 
         {/* 🔧 DevOps & Cloud Projects */}
-        <h3 className='text-2xl font-bold mb-6 text-left text-[#F07050]'>
-          🔧 DevOps & Cloud Engineering
+        <h3
+          className='
+            text-xl sm:text-2xl font-bold
+            mb-4 sm:mb-6
+            text-left
+            text-[#F07050]
+            flex items-center gap-2
+          '
+        >
+          <span aria-hidden>🔧</span>
+          <span>DevOps & Cloud Engineering</span>
         </h3>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-16'>
+
+        <div
+          className='
+            grid grid-cols-1 md:grid-cols-2
+            gap-6 sm:gap-8
+            mb-12 md:mb-16
+          '
+        >
           <ProjectCard
             title='Terraform + GCP + Docker CI/CD'
             description='Provisioned infrastructure with Terraform, deployed Node.js app using Docker and GitHub Actions, with GCP monitoring.'
@@ -38,10 +69,20 @@ export default function Projects() {
         </div>
 
         {/* 💻 Full Stack & Frontend Projects */}
-        <h3 className='text-2xl font-bold mb-6 text-left text-[#F07050]'>
-          💻 Full Stack & Frontend Development
+        <h3
+          className='
+            text-xl sm:text-2xl font-bold
+            mb-4 sm:mb-6
+            text-left
+            text-[#F07050]
+            flex items-center gap-2
+          '
+        >
+          <span aria-hidden>💻</span>
+          <span>Full Stack & Frontend Development</span>
         </h3>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8'>
           <ProjectCard
             title='PitchVibe (MERN App)'
             description='Full-stack soccer app built with React, Node, Express, and MongoDB. Dockerized with CI/CD and deployment to GCP.'
