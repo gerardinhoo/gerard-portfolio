@@ -18,9 +18,9 @@ export default function ParticlesBackground() {
         background: { color: 'transparent' },
         particles: {
           number: { value: 60 },
-          size: { value: 2 },
+          size: { value: 3 },
           color: { value: '#ffffff' },
-          opacity: { value: 0.5 },
+          opacity: { value: 0.7 },
           move: { enable: true, speed: 1 },
           links: { enable: true, color: '#ffffff', opacity: 0.1 },
         },

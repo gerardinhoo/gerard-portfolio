@@ -28,8 +28,12 @@ export default function About() {
         </div>
 
         <p className='text-neutral-800/90 leading-relaxed text-base sm:text-lg max-w-3xl mx-auto'>
-          I’m <span className='font-semibold text-neutral-900'>Gerard Eku</span>
-          , a<span className='font-semibold'> DevOps & Software Engineer</span>{' '}
+          I’m{' '}
+          <span className='font-semibold text-neutral-900'>Gerard Eklu</span>, a
+          <span className='font-semibold'>
+            {' '}
+            Self-taught DevOps & Software Engineer
+          </span>{' '}
           with
           <span className='font-semibold'> 5 years</span> of experience
           delivering scalable apps and cloud infrastructure. I work across{' '}
@@ -65,8 +69,9 @@ export default function About() {
             <span className='font-semibold'> Tailwind CSS</span>, and delivered
             a fully optimized HVAC website. I’m continually sharpening my{' '}
             <span className='font-semibold'>DevOps</span> &{' '}
-            <span className='font-semibold'>AWS</span> skills through hands-on
-            projects and a focused bootcamp bridging the gap between
+            <span className='font-semibold'>AWS</span> and Software Engineering
+            skills through hands-on projects and a focused bootcamp bridging the
+            gap between
             <span className='font-semibold'> code and reliability</span>.
           </p>
         </div>

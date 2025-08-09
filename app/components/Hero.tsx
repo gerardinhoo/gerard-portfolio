@@ -8,15 +8,16 @@ export default function Hero() {
       <ParticlesBackground />
       <div className='z-10 max-w-4xl mx-auto'>
         {/* Headline */}
-        <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-3 drop-shadow-lg uppercase tracking-wide'>
-          DevOps Engineer | Software Engineer | Freelance Web Developer
-        </h1>
+        <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-3 drop-shadow-lg uppercase tracking-wide'>
+          DevOps Engineer - Software Engineer - Freelance Web Developer
+        </h2>
 
         {/* Tagline */}
         <p className='text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-white tracking-tight mb-10 max-w-3xl mx-auto'>
-          DevOps & Software Engineer with 5 years of experience delivering
-          scalable apps and cloud infrastructure — from React UIs to
-          Terraform/GCP/AWS and CI/CD pipelines.
+          Self-Taught DevOps & Software Engineer | 5+ Years Building Scalable
+          Apps & Cloud Infrastructure From crafting sleek React UIs and
+          contributing across the full stack to automating infrastructure with
+          Terraform on GCP/AWS and delivering seamless CI/CD pipelines.
         </p>
 
         {/* CTA */}
