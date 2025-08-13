@@ -6,11 +6,12 @@ export default function Contact() {
     <section id='contact' className='py-20 bg-white'>
       <div className='max-w-3xl mx-auto text-center'>
         <h2 className='text-4xl font-bold mb-6 text-[#F07050]'>
-          Let's Connect
+          Let’s Connect
         </h2>
+
         <p className='text-lg mb-10'>
-          I'm open to opportunities in DevOps, Full Stack, or Freelance work.
-          Feel free to reach out whether it's a project idea, a job offer, or
+          I’m open to opportunities in DevOps, Full Stack, or Freelance work.
+          Feel free to reach out whether it’s a project idea, a job offer, or
           just to say hi!
         </p>
 
@@ -18,6 +19,7 @@ export default function Contact() {
           <a
             href='mailto:eklugerard018@gmail.com'
             className='flex items-center gap-2 px-5 py-3 bg-[#F07050] text-white rounded hover:bg-orange-600 transition'
+            aria-label='Email Gerard'
           >
             <MdEmail size={18} /> Email Me
           </a>
@@ -25,7 +27,9 @@ export default function Contact() {
           <a
             href='https://github.com/gerardinhoo'
             target='_blank'
+            rel='noopener noreferrer'
             className='flex items-center gap-2 px-5 py-3 bg-black text-white rounded hover:bg-gray-800 transition'
+            aria-label='GitHub profile'
           >
             <FaGithub size={18} /> GitHub
           </a>
@@ -33,7 +37,9 @@ export default function Contact() {
           <a
             href='https://linkedin.com/in/gerard-eklu-270422151/'
             target='_blank'
+            rel='noopener noreferrer'
             className='flex items-center gap-2 px-5 py-3 border border-[#F07050] text-[#F07050] rounded hover:bg-[#F07050] hover:text-white transition'
+            aria-label='LinkedIn profile'
           >
             <FaLinkedin size={18} /> LinkedIn
           </a>

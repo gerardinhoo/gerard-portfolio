@@ -2,10 +2,11 @@
 
 import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
+import type { Engine } from 'tsparticles-engine';
 import { loadSlim } from 'tsparticles-slim';
 
 export default function ParticlesBackground() {
-  const particlesInit = useCallback(async (engine: any) => {
+  const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);
 
@@ -25,12 +26,8 @@ export default function ParticlesBackground() {
           links: { enable: true, color: '#ffffff', opacity: 0.1 },
         },
         interactivity: {
-          events: {
-            onHover: { enable: true, mode: 'repulse' },
-          },
-          modes: {
-            repulse: { distance: 100 },
-          },
+          events: { onHover: { enable: true, mode: 'repulse' } },
+          modes: { repulse: { distance: 100 } },
         },
       }}
       className='absolute inset-0 z-0'
