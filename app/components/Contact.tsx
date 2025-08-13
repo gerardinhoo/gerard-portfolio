@@ -16,13 +16,13 @@ export default function Contact() {
         </p>
 
         <div className='flex justify-center gap-6 flex-wrap'>
-          <a
+          {/* <a
             href='mailto:eklugerard018@gmail.com'
             className='flex items-center gap-2 px-5 py-3 bg-[#F07050] text-white rounded hover:bg-orange-600 transition'
             aria-label='Email Gerard'
           >
             <MdEmail size={18} /> Email Me
-          </a>
+          </a> */}
 
           <a
             href='https://github.com/gerardinhoo'
