@@ -38,13 +38,12 @@ export default function Hero() {
 
         {/* Tagline */}
         <p className='mt-6 max-w-3xl mx-auto text-white/95 text-lg sm:text-xl [text-wrap:balance]'>
-          "From code to cloud. I build, automate, and deliver reliable
-          systems.""
+          From code to cloud. I build, automate, and deliver reliable systems.
         </p>
 
         {/* Sub-keywords (muted) */}
         <p className='mt-2 max-w-3xl mx-auto text-white/80 text-sm sm:text-base'>
-          React | Node.js | Terraform | Docker | CI/CD | AWS/GCP
+          React · Node.js · Terraform · Docker · CI/CD · AWS/GCP
         </p>
 
         {/* CTA */}
