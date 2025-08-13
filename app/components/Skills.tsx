@@ -4,6 +4,13 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
+const DEVICON_BASE = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/';
+const getIconSrc = (icon: string) => {
+  // Use local or absolute URLs as-is; otherwise, use the Devicon CDN
+  if (icon.startsWith('/') || icon.startsWith('http')) return icon;
+  return `${DEVICON_BASE}${icon}`;
+};
+
 const skills = [
   {
     title: 'DevOps & Cloud Engineering',
@@ -93,11 +100,12 @@ export default function Skills() {
                     viewport={{ once: true }}
                   >
                     <Image
-                      src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.icon}`}
+                      src={getIconSrc(skill.icon)}
                       alt={skill.name}
                       width={40}
                       height={40}
-                      className='mb-1'
+                      className='mb-1 h-10 w-10 object-contain'
+                      unoptimized={skill.icon.startsWith('/')} // ensure local SVGs render without optimization issues
                     />
                     <p className='text-xs font-medium text-center'>
                       {skill.name}
