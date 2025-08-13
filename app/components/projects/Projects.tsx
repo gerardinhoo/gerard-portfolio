@@ -48,23 +48,32 @@ export default function Projects() {
           '
         >
           <ProjectCard
-            title='Terraform + GCP + Docker CI/CD'
-            description='Provisioned infrastructure with Terraform, deployed Node.js app using Docker and GitHub Actions, with GCP monitoring.'
-            tags={['Terraform', 'Docker', 'GCP', 'GitHub Actions']}
-            github='https://github.com/yourusername/terraform-gcp-docker'
-            live='https://live-demo-link.com'
+            title='GCP Infrastructure Setup with Terraform'
+            description='IaC on GCP: VPC, subnet, firewall, and Compute Engine VM provisioned with Terraform. Startup script installs Docker/Git. GCS remote backend + Terraform workspaces for isolated dev/prod. Includes architecture diagram & outputs.'
+            tags={[
+              'Terraform',
+              'GCP',
+              'Compute Engine',
+              'GCS Backend',
+              'Workspaces',
+            ]}
+            github='https://github.com/gerardinhoo/Devops-Journey/tree/main/gcp-terraform-infra'
+            live='https://raw.githubusercontent.com/gerardinhoo/Devops-Journey/main/gcp-terraform-infra/assets/architecture-diagram.png'
           />
           <ProjectCard
-            title='Spring Boot + Maven + Nexus'
-            description='Java/Maven project built with CI pipeline, artifact pushed to Nexus, deployed to EC2 instance.'
-            tags={['Java', 'Maven', 'Nexus', 'EC2']}
-            github='https://github.com/yourusername/springboot-nexus'
-          />
-          <ProjectCard
-            title='Prometheus + Grafana Monitoring'
-            description='Integrated Prometheus and Grafana to monitor a Dockerized Node.js app running on a remote VM.'
-            tags={['Prometheus', 'Grafana', 'Docker', 'Monitoring']}
-            github='https://github.com/yourusername/monitoring-stack'
+            title='Dockerized Node API — CI/CD to EC2 + Monitoring'
+            description='Containerized a Node/Express API, built & pushed images, and deployed via GitHub Actions (SSH) to AWS EC2. Added production-style observability with Prometheus scraping /metrics and a Grafana dashboard. Includes architecture diagram and runbooks.'
+            tags={[
+              'Node.js',
+              'Express',
+              'Docker',
+              'GitHub Actions',
+              'EC2',
+              'Prometheus',
+              'Grafana',
+            ]}
+            github='https://github.com/gerardinhoo/simple-node-api'
+            live='https://raw.githubusercontent.com/gerardinhoo/Devops-Journey/main/simple-node-api/assets/devops-workflow.png'
           />
         </div>
 
@@ -84,18 +93,33 @@ export default function Projects() {
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8'>
           <ProjectCard
-            title='PitchVibe (MERN App)'
-            description='Full-stack soccer app built with React, Node, Express, and MongoDB. Dockerized with CI/CD and deployment to GCP.'
-            tags={['React', 'Node.js', 'MongoDB', 'Docker']}
-            github='https://github.com/yourusername/pitchvibe'
-            live='https://pitchvibe.com'
+            title='The Comfort Guardians HVAC Website'
+            description='Freelance marketing site for an HVAC business built with Next.js, Tailwind CSS, and Framer Motion. Integrated Jobber for appointment booking, custom contact form with Nodemailer backend, and deployed to Vercel.'
+            tags={[
+              'Next.js',
+              'Tailwind CSS',
+              'Framer Motion',
+              'TypeScript',
+              'Vercel',
+              'Nodemailer',
+              'Jobber Integration',
+              'SEO',
+            ]}
+            github='https://github.com/gerardinhoo/the-comfort-guardians'
+            live='https://www.thecomfortsguardians.com/'
           />
           <ProjectCard
-            title='Comfort Guardians HVAC Website'
-            description='Freelance site for HVAC business using Next.js, Tailwind CSS, SEO optimization, and Jobber integration. Deployed to Vercel.'
-            tags={['Next.js', 'Tailwind CSS', 'SEO', 'Jobber']}
-            github='https://github.com/yourusername/hvac-site'
-            live='https://comfortguardians.com'
+            title='Position Description Management App (Frontend Collaboration)'
+            description='Contributed to the frontend of a web app designed to manage, update, and generate job descriptions across an organization (ASCO). Built UIs with Next JS and Tailwind CSS, implemented editable forms, profile templates, and integrated with backend APIs for dynamic data handling. Collaborated with another engineer to deliver the app to a client company, deployed via AWS Amplify.'
+            tags={[
+              'Next JS',
+              'Tailwind CSS',
+              'TypeScript',
+              'AWS Amplify',
+              'Team Collaboration',
+            ]}
+            github='https://github.com/Gambia-Fintech/theexm-applications/tree/main/apps/web/features'
+            live='https://main.d22l2h3u9kpjbu.amplifyapp.com/'
           />
         </div>
       </div>

@@ -26,7 +26,7 @@ const skills = [
       { name: 'Express', icon: 'express/express-original.svg' },
       { name: 'MongoDB', icon: 'mongodb/mongodb-original.svg' },
       { name: 'Next.js', icon: 'nextjs/nextjs-original.svg' },
-      { name: 'Tailwind CSS', icon: 'tailwindcss/tailwindcss-plain.svg' },
+      { name: 'Tailwind CSS', icon: '/icons/tailwindcss.svg' },
     ],
   },
   {
@@ -36,8 +36,7 @@ const skills = [
       { name: 'Linux', icon: 'linux/linux-original.svg' },
       { name: 'Bash', icon: 'bash/bash-original.svg' },
       { name: 'Jira', icon: 'jira/jira-original.svg' },
-      { name: 'VS Code', icon: 'vscode/vscode-original.svg' },
-      { name: 'Agile', icon: 'scrumalliance/scrumalliance-original.svg' },
+      { name: 'Agile', icon: '/icons/agile.svg' },
     ],
   },
 ];
