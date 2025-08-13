@@ -37,12 +37,14 @@ export default function Hero() {
         </h1>
 
         {/* Tagline */}
-        <p className='text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-white tracking-tight mb-10 max-w-3xl mx-auto'>
-          Self-taught engineer with 5+ years of experience delivering scalable
-          applications and cloud infrastructure. From building high-performance
-          React UIs to deploying automated, production-ready systems with
-          Terraform, Docker, and CI/CD pipelines on GCP/AWS — I bridge the gap
-          between code and cloud reliability.
+        <p className='mt-6 max-w-3xl mx-auto text-white/95 text-lg sm:text-xl [text-wrap:balance]'>
+          "From code to cloud. I build, automate, and deliver reliable
+          systems.""
+        </p>
+
+        {/* Sub-keywords (muted) */}
+        <p className='mt-2 max-w-3xl mx-auto text-white/80 text-sm sm:text-base'>
+          React | Node.js | Terraform | Docker | CI/CD | AWS/GCP
         </p>
 
         {/* CTA */}
