@@ -37,22 +37,12 @@ export default function Hero() {
         </h1>
 
         {/* Tagline */}
-        <p className='mt-6 max-w-3xl mx-auto text-white/95 text-lg sm:text-xl [text-wrap:balance]'>
+        <h2 className='mt-6 max-w-3xl mx-auto text-white/95 leading-snug [text-wrap:balance] text-[clamp(1.25rem,4vw,2rem)]'>
           From code to cloud. I build, automate, and deliver reliable systems.
-        </p>
-
-        {/* Sub-keywords (muted) */}
-        <p className='mt-2 max-w-3xl mx-auto text-white/80 text-sm sm:text-base'>
+        </h2>
+        <h3 className='mt-2 max-w-3xl mx-auto text-white/80 text-[clamp(1rem,2.5vw,1.25rem)]'>
           React · Node.js · Terraform · Docker · CI/CD · AWS/GCP
-        </p>
-
-        {/* CTA */}
-        <a
-          href='#projects'
-          className='bg-white text-[#F07050] font-bold px-6 py-3 rounded-full hover:bg-orange-100 transition'
-        >
-          View Projects
-        </a>
+        </h3>
       </div>
     </section>
   );
