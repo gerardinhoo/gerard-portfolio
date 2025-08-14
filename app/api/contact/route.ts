@@ -36,7 +36,7 @@ export async function POST(req: Request) {
 
     const from =
       process.env.CONTACT_FROM_EMAIL || 'Portfolio <contact@gerardeklu.dev>';
-    const to = process.env.CONTACT_TO_EMAIL || 'eklugerard018@gmail.com';
+    const to = process.env.CONTACT_TO_EMAIL || 'eklugerard@yahoo.com';
 
     // Message to you
     await resend.emails.send({
