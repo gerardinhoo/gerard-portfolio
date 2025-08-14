@@ -19,11 +19,6 @@ export default function Footer() {
               label: 'LinkedIn',
               Icon: FaLinkedin,
             },
-            // {
-            //   href: 'mailto:hello@yourdomain.com',
-            //   label: 'Email',
-            //   Icon: FaEnvelope,
-            // },
           ].map(({ href, label, Icon }) => (
             <a
               key={label}
