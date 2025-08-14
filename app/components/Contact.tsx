@@ -39,7 +39,7 @@ export default function Contact() {
         <h2 className='text-4xl font-bold mb-6 text-[#F07050]'>
           Let’s Connect
         </h2>
-        <p className='text-lg mb-10'>
+        <p className='text-lg mb-10 text-slate-700 max-w-2xl mx-auto mb-10'>
           I’m open to opportunities in DevOps, Full Stack, or Freelance work.
           Drop a note below.
         </p>

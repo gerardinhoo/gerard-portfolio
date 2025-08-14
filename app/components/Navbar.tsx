@@ -1,71 +1,65 @@
 // app/components/Navbar.tsx
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const items = [
-    { href: '#about', label: 'ABOUT' },
-    { href: '#projects', label: 'PROJECTS' },
-    { href: '#skills', label: 'SKILLS' },
-    { href: '#contact', label: 'CONTACT' },
-  ];
+  // Optional: lock page scroll when menu is open (mobile polish)
+  useEffect(() => {
+    if (open) document.documentElement.style.overflow = 'hidden';
+    else document.documentElement.style.overflow = '';
+    return () => {
+      document.documentElement.style.overflow = '';
+    };
+  }, [open]);
 
   return (
     <nav
       className='
         sticky top-0 z-50
-        bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60
-        border-b border-black/5
-        uppercase
+        border-b border-orange-100/60
+        bg-white/90 backdrop-blur-xl
+        supports-[backdrop-filter]:bg-white/70
+        shadow-[0_2px_24px_-10px_rgba(240,112,80,0.25)]
       '
     >
       <div className='mx-auto max-w-7xl h-14 px-4 sm:px-6 lg:px-8 flex items-center justify-between'>
         {/* Brand */}
         <Link
           href='/'
-          className='font-extrabold tracking-[0.18em] text-[#F07050] flex-shrink'
+          className='font-extrabold tracking-wide text-[#F07050] uppercase'
         >
-          <span className='text-lg sm:text-xl md:text-2xl'>GERARD EKLU</span>
+          <span className='text-lg sm:text-xl md:text-2xl'>Gerard Eklu</span>
         </Link>
 
         {/* Desktop links */}
-        <ul className='hidden md:flex items-center gap-1'>
-          {items.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                className='
-                  group relative inline-flex items-center
-                  px-3 py-2 text-sm font-semibold tracking-wider
-                  text-neutral-900 hover:text-[#F07050]
-                  transition-colors duration-200
-                  rounded-md focus:outline-none
-                  focus-visible:ring-2 focus-visible:ring-[#F07050]/40
-                '
-              >
-                <span>{label}</span>
-                {/* animated underline */}
-                <span
-                  aria-hidden='true'
-                  className='
-                    pointer-events-none absolute left-2 right-2 -bottom-0.5
-                    h-[2px] origin-left scale-x-0 bg-[#F07050]
-                    transition-transform duration-300 group-hover:scale-x-100
-                    group-focus-visible:scale-x-100
-                  '
-                />
-              </Link>
-            </li>
+        <div className='hidden md:flex items-center gap-2'>
+          {[
+            { href: '#about', label: 'About' },
+            { href: '#projects', label: 'Projects' },
+            { href: '#skills', label: 'Skills' },
+            { href: '#contact', label: 'Contact' },
+          ].map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className='
+                relative px-3 py-2 rounded-full text-[13px] font-semibold uppercase tracking-wide
+                text-slate-800 hover:text-[#F07050]
+                hover:bg-orange-50 transition-colors
+              '
+            >
+              {label}
+            </Link>
           ))}
-        </ul>
+        </div>
 
         {/* Mobile toggle */}
         <button
-          className='md:hidden inline-flex items-center rounded p-2 hover:bg-black/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F07050]/40'
+          className='md:hidden inline-flex items-center rounded p-2 hover:bg-black/5'
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label='Toggle navigation'
@@ -81,21 +75,30 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile sheet */}
       {open && (
-        <div className='md:hidden border-t bg-white/90 backdrop-blur'>
-          <div className='mx-auto max-w-7xl px-4 py-3 flex flex-col gap-2 text-sm sm:text-base font-medium text-center'>
-            {items.map(({ href, label }) => (
+        <div
+          className='
+            md:hidden absolute left-0 right-0 top-14
+            bg-white shadow-md border-t border-orange-100
+            text-slate-900
+          '
+        >
+          <div className='mx-auto max-w-7xl px-4 py-3 flex flex-col'>
+            {[
+              { href: '#about', label: 'About' },
+              { href: '#projects', label: 'Projects' },
+              { href: '#skills', label: 'Skills' },
+              { href: '#contact', label: 'Contact' },
+            ].map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                onClick={() => setOpen(false)}
                 className='
-                  block rounded-md px-3 py-2
-                  hover:bg-[#F07050]/10 hover:text-[#F07050]
-                  transition-colors
-                  focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F07050]/40
+                  w-full text-left py-3 text-base font-semibold uppercase tracking-wide
+                  text-slate-900 hover:text-[#F07050]
                 '
+                onClick={() => setOpen(false)}
               >
                 {label}
               </Link>

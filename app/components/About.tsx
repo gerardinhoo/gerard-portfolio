@@ -36,14 +36,14 @@ export default function About() {
           </div>
           {/* Experience highlight (kept as inner card for contrast) */}
           <div className='mt-6 sm:mt-7 text-left bg-white/70 backdrop-blur-sm rounded-2xl border border-orange-100/70 p-5 sm:p-6 shadow-[0_10px_30px_-15px_rgba(240,112,80,0.35)]'>
-            <p>
+            <p className='text-slate-800 leading-relaxed text-base sm:text-lg max-w-3xl mx-auto'>
               I’m Gerard Eklu, a Software Engineer with 5 years of enterprise
               experience who evolved into DevOps through hands-on projects and
               advanced training. I blend full stack development with cloud,
               CI/CD, and infrastructure expertise working across React, Next JS,
               Node.js, Java, Terraform, and Google Cloud Platform.
             </p>
-            <p>
+            <p className='mt-4 text-slate-800 leading-relaxed text-base sm:text-lg'>
               At The Home Depot, I built high-performance React UIs, contributed
               to full stack apps, automated deployments with TeamCity & GitHub
               Actions, managed workloads on GKE with Spinnaker, and provisioned
