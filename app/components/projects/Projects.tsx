@@ -61,7 +61,7 @@ export default function Projects() {
             live='https://raw.githubusercontent.com/gerardinhoo/Devops-Journey/main/gcp-terraform-infra/assets/architecture-diagram.png'
           />
           <ProjectCard
-            title='Dockerized Node API — CI/CD to EC2 + Monitoring'
+            title='Dockerized Node API && CI/CD to EC2 + Monitoring'
             description='Containerized a Node/Express API, built & pushed images, and deployed via GitHub Actions (SSH) to AWS EC2. Added production-style observability with Prometheus scraping /metrics and a Grafana dashboard. Includes architecture diagram and runbooks.'
             tags={[
               'Node.js',
@@ -72,7 +72,7 @@ export default function Projects() {
               'Prometheus',
               'Grafana',
             ]}
-            github='https://github.com/gerardinhoo/simple-node-api'
+            github='https://github.com/gerardinhoo/Devops-Journey/tree/main/simple-node-api'
             live='https://raw.githubusercontent.com/gerardinhoo/Devops-Journey/main/simple-node-api/assets/devops-workflow.png'
           />
         </div>
