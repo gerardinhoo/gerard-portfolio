@@ -11,7 +11,7 @@ export default function Resume() {
         </p>
 
         <a
-          href='/Gerard_Eklu_resume.pdf'
+          href='/Gerard_Eklu_DevOps_Cloud_Software_Engineer_Resume.pdf'
           target='_blank'
           rel='noopener noreferrer'
           className='inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#F07050] hover:bg-[#d95d3f] transition text-white font-semibold shadow-md'

@@ -18,9 +18,9 @@ export default function Hero() {
         >
           <span>DevOps Engineer</span>
           <span className='opacity-70' />
-          <span>Full-Stack Engineer</span>
+          <span>Software Engineer</span>
           <span className='opacity-70' />
-          <span>Freelance Web Developer</span>
+          <span>Cloud Engineer</span>
         </h1>
 
         {/* Mobile version (stacked) */}
