@@ -34,6 +34,29 @@ export default function Projects() {
             mb-12 md:mb-16
           '
         >
+
+          <ProjectCard
+            featured
+            title="The Acquisitions: Full Cloud DevOps Pipeline (Docker, CI/CD, ALB, EC2, Monitoring, DevSecOps)"
+            description="
+            A production-ready DevOps pipeline for a real-world Node/Express API. Features include full CI/CD with GitHub Actions, Docker containerization, automated deployments to AWS EC2, HTTPS routing via ALB, Prometheus monitoring, Grafana dashboards, and Trivy vulnerability scanning providing complete DevSecOps coverage from build to production
+            "
+            tags={[
+              'AWS ALB',
+              'Docker',
+              'GitHub Actions',
+              'EC2 Deployment',
+              'DevSecOps',
+              'Trivy',
+              'Prometheus',
+              'Grafana',
+              'Node.js',
+              'PostgreSQL'
+            ]}
+            github="https://github.com/gerardinhoo/TheAcquisitions"
+            live="https://raw.githubusercontent.com/gerardinhoo/TheAcquisitions/refs/heads/main/images/theacquisitions-architecture.png"
+          />
+
           <ProjectCard
             title='GCP Infrastructure Setup with Terraform'
             description='IaC on GCP: VPC, subnet, firewall, and Compute Engine VM provisioned with Terraform. Startup script installs Docker/Git. GCS remote backend + Terraform workspaces for isolated dev/prod. Includes architecture diagram & outputs.'

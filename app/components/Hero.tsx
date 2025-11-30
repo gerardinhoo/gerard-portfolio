@@ -11,8 +11,7 @@ export default function Hero() {
           Cloud &amp; DevOps Engineer
         </h1>
         <p className='mt-5 text-xl md:text-2xl text-slate-300 max-w-2xl'>
-          Engineering reliable, automated cloud systems across AWS &amp; GCP with a
-          DevOps-driven approach.
+          Building reliable, scalable, automated cloud platforms on AWS & GCP with a DevOps-driven approach.
         </p>
         <p className='mt-4 text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-cyan-400'>
           Terraform · Docker · Kubernetes · CI/CD · Observability

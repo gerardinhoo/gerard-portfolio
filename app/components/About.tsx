@@ -26,35 +26,27 @@ export default function About() {
 
           {/* About text */}
           <div className='text-sm md:text-[15px] leading-relaxed text-slate-300 text-left md:text-center space-y-3'>
-            <p>
-              I’m Gerard Eklu, a Software Engineer with 5 years of enterprise
-              experience who transitioned into DevOps through hands-on projects
-              and cloud engineering training. I specialize in building reliable,
-              scalable systems by combining full-stack development with CI/CD
-              automation, containerization, and infrastructure as code across
-              AWS and GCP.
-            </p>
-            <p>
-              At The Home Depot, I built high-performance React UIs, contributed
-              to full stack apps, automated deployments with TeamCity & GitHub
-              Actions, managed workloads on GKE with Spinnaker, and provisioned
-              infrastructure via Terraform. Since then, I’ve delivered projects
-              from job management apps to optimized business websites, while
-              continually sharpening my DevOps and AWS skills.
-            </p>
+           <p>
+            I’m Gerard Eklu, a Cloud & DevOps Engineer with a software engineering foundation and hands-on experience building automated, scalable systems on AWS and GCP. I work with Terraform, Docker, Kubernetes, CI/CD, cloud security, and monitoring to deliver reliable cloud infrastructure. Previously at The Home Depot, I contributed to large-scale app development and automated deployments across enterprise environments.
+          </p>
+
+          <p>
+            Today, I focus on building real-world DevOps projects that integrate IaC, containerization, and production-ready cloud architectures across AWS and GCP.
+          </p>
+
           </div>
 
           {/* Quick stats */}
           <div className='mt-6 flex flex-wrap justify-center gap-3'>
-            <span className='inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-300'>
-              5 years software engineering
-            </span>
-            <span className='inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-300'>
-              Cloud &amp; DevOps on GCP &amp; AWS
-            </span>
-            <span className='inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-300'>
-              React · Next.js · Node.js · Terraform · CI/CD
-            </span>
+             <span className='inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-300'>
+                5 years software engineering experience
+             </span>
+             <span className='inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-300'>
+                Cloud & DevOps on AWS + GCP
+             </span>
+             <span className='inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-300'>
+                Terraform · Kubernetes · CI/CD · Full-Stack
+             </span>
           </div>
 
           {/* Tags */}
@@ -65,10 +57,12 @@ export default function About() {
               'Java',
               'TeamCity',
               'GitHub Actions',
+              'Jenkins',
               'Terraform',
               'GKE',
               'Spinnaker',
               'Vault',
+              'Trivy',
               'GCP',
               'AWS',
             ].map((t) => (
@@ -82,13 +76,23 @@ export default function About() {
           </div>
 
           {/* CTA */}
-          <div className='mt-6'>
+          <div className="mt-10 flex flex-col items-center gap-3">
             <a
-              href='#projects'
-              className='inline-flex items-center gap-2 rounded-full bg-cyan-500 text-slate-950 font-medium px-6 py-3 hover:bg-cyan-400 transition-colors shadow-[0_0_25px_rgba(34,211,238,0.45)]'
+              href="https://github.com/gerardinhoo/Devops-Journey"
+              target="_blank"
+              className="rounded-full bg-cyan-500 px-6 py-3 text-white font-medium shadow-md hover:bg-cyan-600 transition"
             >
-              View Projects
+              Explore My Cloud & DevOps Journey
             </a>
+
+            <h3 className="text-slate-200 text-sm sm:text-base font-medium text-center">
+              Hands-on projects across AWS, GCP, Terraform, Docker, Kubernetes, CI/CD, and Cloud Security..
+            </h3>
+
+            <p className="text-slate-400 text-sm text-center max-w-xl">
+              A curated collection of real cloud deployments, IaC builds, CI/CD pipelines, containerized applications, monitoring setups, 
+              and troubleshooting work completed throughout my DevOps engineering journey.
+            </p>
           </div>
         </div>
       </div>

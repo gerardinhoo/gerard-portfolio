@@ -9,6 +9,7 @@ interface ProjectCardProps {
   tags: string[];
   github: string;
   live?: string;
+  featured?: boolean,
 }
 
 export default function ProjectCard({
@@ -17,6 +18,7 @@ export default function ProjectCard({
   tags,
   github,
   live,
+  featured = false
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -26,6 +28,12 @@ export default function ProjectCard({
       transition={{ duration: 0.4 }}
     >
       <div>
+           {/* ⭐ Featured Badge */}
+      {featured && (
+        <span className="inline-block mb-3 rounded-full bg-orange-500/20 text-orange-400 px-3 py-1 text-xs font-semibold tracking-wide">
+          ⭐ Featured Project
+        </span>
+      )}
         <h3 className='font-heading text-xl md:text-2xl text-slate-50'>{title}</h3>
         <p className='mt-3 text-sm md:text-[15px] leading-relaxed text-slate-300'>
           {description}

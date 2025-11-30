@@ -24,20 +24,14 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gerardeklu.dev'),
-  title: 'Gerard Eklu — Full-Stack & DevOps Engineer',
-  description:
-    'Self-taught engineer with 5+ years delivering scalable apps and cloud infrastructure. React, Node.js, Terraform, Docker, CI/CD on GCP/AWS.',
-  openGraph: {
-    title: 'Gerard Eklu — Full-Stack & DevOps Engineer',
-    description:
-      'Frontend excellence + cloud reliability. Projects across GCP/AWS, Terraform, Docker, CI/CD.',
-    url: '/',
-    siteName: 'Gerard Eklu',
-    images: [{ url: '/og.png', width: 1200, height: 630 }],
-    type: 'website',
+  title: "Gerard Eklu - Cloud & DevOps Engineer",
+  description: "Engineering reliable, automated cloud systems across AWS & GCP with a DevOps-driven approach.",
+  icons: {
+    icon: "/favicon.ico",                 // main favicon
+    shortcut: "/favicon-32x32.png",
+    apple: "/apple-touch-icon.png",
   },
-  icons: { icon: '/favicon.ico' },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
