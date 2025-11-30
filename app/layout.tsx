@@ -27,9 +27,12 @@ export const metadata: Metadata = {
   title: "Gerard Eklu - Cloud & DevOps Engineer",
   description: "Engineering reliable, automated cloud systems across AWS & GCP with a DevOps-driven approach.",
   icons: {
-    icon: "/favicon.ico",                 // main favicon
-    shortcut: "/favicon-32x32.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", type: "image/png" },
+    ],
     apple: "/apple-touch-icon.png",
+    shortcut: "/favicon.ico",
   },
   manifest: "/site.webmanifest",
 };
