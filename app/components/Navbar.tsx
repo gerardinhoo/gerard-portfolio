@@ -26,7 +26,7 @@ export default function Navbar() {
     >
       <div className='mx-auto flex max-w-6xl items-center justify-between px-6 md:px-10 py-3'>
         {/* Brand */}
-        <Link href='/' className='font-heading text-lg md:text-xl tracking-[0.25em] text-orange-400'>
+        <Link href='/' className='font-heading text-lg md:text-xl tracking-[0.25em] text-orange-400 font-bold'>
           GERARD EKLU
         </Link>
 

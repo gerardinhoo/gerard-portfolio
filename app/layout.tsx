@@ -28,13 +28,14 @@ export const metadata: Metadata = {
   description: "Engineering reliable, automated cloud systems across AWS & GCP with a DevOps-driven approach.",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon-32x32.png", type: "image/png" },
+      { url: "/favicon.ico?v=3" },
+      { url: "/favicon-32x32.png?v=3" }
     ],
-    apple: "/apple-touch-icon.png",
-    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png?v=3",
+    shortcut: "/favicon.ico?v=3",
   },
-  manifest: "/site.webmanifest",
+  manifest: "/site.webmanifest?v=3",
+
 };
 
 export default function RootLayout({
