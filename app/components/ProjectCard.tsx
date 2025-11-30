@@ -20,30 +20,33 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <motion.div
-      className='bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition border border-gray-100'
-      whileHover={{ scale: 1.03 }}
+      className='bg-slate-900/70 border border-slate-800 rounded-2xl p-6 md:p-7 shadow-lg shadow-black/25 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-xl hover:border-cyan-400/60'
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
     >
-      <h3 className='text-xl font-bold mb-2 text-[#F07050]'>{title}</h3>
-      <p className='text-sm text-gray-700 mb-4'>{description}</p>
-      <div className='flex flex-wrap gap-2 mb-4'>
-        {tags.map((tag, i) => (
-          <span
-            key={i}
-            className='text-xs bg-orange-100 text-orange-600 font-semibold px-2 py-1 rounded-full'
-          >
-            {tag}
-          </span>
-        ))}
+      <div>
+        <h3 className='font-heading text-xl md:text-2xl text-slate-50'>{title}</h3>
+        <p className='mt-3 text-sm md:text-[15px] leading-relaxed text-slate-300'>
+          {description}
+        </p>
+        <div className='mt-4 flex flex-wrap gap-2'>
+          {tags.map((tag, i) => (
+            <span
+              key={i}
+              className='inline-flex items-center rounded-full border border-slate-700 px-2.5 py-1 text-[11px] font-medium uppercase tracking-wide text-slate-300'
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
-      <div className='flex gap-4'>
+      <div className='mt-6 flex flex-wrap items-center gap-3'>
         <a
           href={github}
           target='_blank'
           rel='noopener noreferrer'
-          className='text-sm text-white bg-black px-4 py-2 rounded hover:bg-gray-800 transition flex items-center gap-1'
+          className='inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-medium bg-slate-100 text-slate-900 hover:bg-slate-200 transition-colors'
         >
           GitHub <ExternalLink size={14} />
         </a>
@@ -52,7 +55,7 @@ export default function ProjectCard({
             href={live}
             target='_blank'
             rel='noopener noreferrer'
-            className='text-sm text-[#F07050] border border-[#F07050] px-4 py-2 rounded hover:bg-[#F07050] hover:text-white transition flex items-center gap-1'
+            className='inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-medium border border-cyan-400 text-cyan-300 hover:bg-cyan-400/10 transition-colors'
           >
             Live Demo <ExternalLink size={14} />
           </a>

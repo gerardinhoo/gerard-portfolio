@@ -5,7 +5,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className='bg-[#F07050] text-white'>
+    <footer className='bg-slate-950 border-t border-slate-800 text-slate-300'>
       <div className='max-w-6xl mx-auto px-6 py-10 text-center space-y-5'>
         <div className='flex justify-center gap-4'>
           {[
@@ -28,20 +28,20 @@ export default function Footer() {
               aria-label={label}
               className='
                 inline-flex h-10 w-10 items-center justify-center rounded-full
-                bg-white/15 backdrop-blur
-                hover:bg-white/25 active:bg-white/20
-                transition ring-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70
+                bg-slate-800/80 backdrop-blur
+                hover:bg-slate-700 active:bg-slate-800
+                transition ring-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70
               '
             >
-              <Icon className='text-white/95' />
+              <Icon className='text-slate-100' />
             </a>
           ))}
         </div>
 
-        <p className='text-white/90'>
-          © {year} <strong>Gerard Eklu</strong>{' '}
-          <span className='text-white/80 text-sm'>
-            Built with Next.js & Tailwind CSS
+        <p className='text-slate-400'>
+          © {year} <strong className='text-slate-100'>Gerard Eklu</strong>{' '}
+          <span className='text-slate-500 text-sm'>
+            Built with Next.js &amp; Tailwind CSS
           </span>
         </p>
       </div>

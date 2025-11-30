@@ -33,26 +33,26 @@ export default function Contact() {
   }
 
   const inputCls =
-    'w-full rounded-xl border border-slate-300/80 bg-white px-4 py-3 ' +
-    'text-[16px] shadow-sm placeholder:text-slate-400 ' +
-    'focus:outline-none focus:ring-2 focus:ring-[#F07050]/30 focus:border-[#F07050]';
+    'w-full rounded-2xl bg-slate-950 border border-slate-700 px-4 py-2.5 text-sm text-slate-100 ' +
+    'placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400';
 
   return (
-    <section id='contact' className='py-20 bg-white'>
-      <div className='max-w-3xl mx-auto px-4 text-center'>
-        <h2 className='text-3xl sm:text-4xl font-bold mb-4 text-[#F07050]'>
+    <section id='contact' className='bg-slate-950 py-20 md:py-24'>
+      <div className='max-w-3xl mx-auto px-6 md:px-10 text-center'>
+        <h2 className='font-heading text-3xl md:text-4xl font-semibold text-slate-50 text-center'>
           Let’s Connect
         </h2>
-        <p className='text-slate-700 text-base sm:text-lg max-w-2xl mx-auto mb-8'>
-          I’m open to opportunities in DevOps, Full Stack, or Freelance work.
-          Drop a note below.
+        <p className='mt-3 text-sm md:text-base text-slate-400 text-center max-w-2xl mx-auto'>
+          I’m open to opportunities in DevOps, Cloud, or Software Engineering
+          roles, as well as freelance work. Drop a note below.
         </p>
 
         {/* Contact form */}
-        <form
-          onSubmit={onSubmit}
-          className='grid gap-4 text-left max-w-xl mx-auto'
-        >
+        <div className='mt-10 max-w-3xl mx-auto'>
+          <form
+            onSubmit={onSubmit}
+            className='bg-slate-900/80 border border-slate-800 rounded-3xl p-8 md:p-10 shadow-lg shadow-black/25 space-y-6 text-left'
+          >
           {/* honeypot (hidden) */}
           <input
             type='text'
@@ -86,12 +86,10 @@ export default function Contact() {
             disabled={loading}
             aria-label='Send message'
             className='
-              w-full sm:w-auto
+              w-full
               inline-flex items-center justify-center gap-2
-              rounded-xl bg-[#F07050] text-white font-semibold
-              px-6 py-3
-              shadow-[0_8px_24px_-10px_rgba(240,112,80,0.6)]
-              transition hover:brightness-110 active:brightness-95
+              rounded-full bg-orange-500 px-5 py-2.5 text-sm font-semibold text-slate-950
+              transition-colors hover:bg-orange-400
               disabled:opacity-60 disabled:pointer-events-none
             '
           >
@@ -110,14 +108,15 @@ export default function Contact() {
             </p>
           )}
         </form>
+        </div>
 
         {/* Socials */}
-        <div className='mt-8 flex flex-col sm:flex-row gap-3 sm:gap-6 max-w-xl mx-auto justify-center'>
+        <div className='mt-4 flex justify-center gap-3'>
           <a
             href='https://github.com/gerardinhoo'
             target='_blank'
             rel='noopener noreferrer'
-            className='w-full sm:w-auto inline-flex justify-center items-center gap-2 px-5 py-3 rounded-xl bg-black text-white hover:bg-gray-800'
+            className='inline-flex items-center justify-center rounded-full bg-slate-100 px-4 py-1.5 text-sm font-medium text-slate-900 hover:bg-slate-200 transition-colors'
           >
             <FaGithub size={18} /> GitHub
           </a>
@@ -125,7 +124,7 @@ export default function Contact() {
             href='https://linkedin.com/in/gerard-eklu-270422151/'
             target='_blank'
             rel='noopener noreferrer'
-            className='w-full sm:w-auto inline-flex justify-center items-center gap-2 px-5 py-3 rounded-xl border border-[#F07050] text-[#F07050] hover:bg-[#F07050] hover:text-white'
+            className='inline-flex items-center justify-center rounded-full border border-orange-400 px-4 py-1.5 text-sm font-medium text-orange-300 hover:bg-orange-400/10 transition-colors'
           >
             <FaLinkedin size={18} /> LinkedIn
           </a>

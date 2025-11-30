@@ -8,6 +8,8 @@ const config: Config = {
     extend: {
       fontFamily: {
         'big-shoulders': ['"Big Shoulders"', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
       },
     },
   },

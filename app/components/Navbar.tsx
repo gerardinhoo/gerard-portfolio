@@ -19,24 +19,19 @@ export default function Navbar() {
   return (
     <nav
       className='
-        sticky top-0 z-50
-        border-b border-orange-100/60
-        bg-white/90 backdrop-blur-xl
-        supports-[backdrop-filter]:bg-white/70
-        shadow-[0_2px_24px_-10px_rgba(240,112,80,0.25)]
+        fixed inset-x-0 top-0 z-50
+        border-b border-slate-800
+        bg-gradient-to-b from-slate-950/90 via-slate-950/70 to-slate-950/40 backdrop-blur-xl
       '
     >
-      <div className='mx-auto max-w-7xl h-14 px-4 sm:px-6 lg:px-8 flex items-center justify-between'>
+      <div className='mx-auto flex max-w-6xl items-center justify-between px-6 md:px-10 py-3'>
         {/* Brand */}
-        <Link
-          href='/'
-          className='font-extrabold tracking-wide text-[#F07050] uppercase'
-        >
-          <span className='text-lg sm:text-xl md:text-2xl'>Gerard Eklu</span>
+        <Link href='/' className='font-heading text-lg md:text-xl tracking-[0.25em] text-orange-400'>
+          GERARD EKLU
         </Link>
 
         {/* Desktop links */}
-        <div className='hidden md:flex items-center gap-2'>
+        <div className='hidden md:flex items-center gap-4'>
           {[
             { href: '#about', label: 'About' },
             { href: '#projects', label: 'Projects' },
@@ -46,11 +41,7 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
-              className='
-                relative px-3 py-2 rounded-full text-[13px] font-semibold uppercase tracking-wide
-                text-slate-800 hover:text-[#F07050]
-                hover:bg-orange-50 transition-colors
-              '
+              className='text-xs md:text-sm font-medium uppercase tracking-[0.18em] text-slate-100/90 hover:text-cyan-400 hover:opacity-80 transition-colors'
             >
               {label}
             </Link>
@@ -59,7 +50,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className='md:hidden inline-flex items-center rounded p-2 hover:bg-black/5'
+          className='md:hidden inline-flex items-center rounded p-2 text-slate-100 hover:bg-slate-800/80'
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label='Toggle navigation'
@@ -79,12 +70,12 @@ export default function Navbar() {
       {open && (
         <div
           className='
-            md:hidden absolute left-0 right-0 top-14
-            bg-white shadow-md border-t border-orange-100
-            text-slate-900
+            md:hidden absolute left-0 right-0 top-full
+            bg-slate-950/95 border-t border-slate-800
+            text-slate-100
           '
         >
-          <div className='mx-auto max-w-7xl px-4 py-3 flex flex-col'>
+          <div className='mx-auto max-w-6xl px-6 py-3 flex flex-col'>
             {[
               { href: '#about', label: 'About' },
               { href: '#projects', label: 'Projects' },
@@ -95,8 +86,8 @@ export default function Navbar() {
                 key={href}
                 href={href}
                 className='
-                  w-full text-left py-3 text-base font-semibold uppercase tracking-wide
-                  text-slate-900 hover:text-[#F07050]
+                  w-full text-left py-3 text-sm font-medium uppercase tracking-[0.18em]
+                  text-slate-100 hover:text-cyan-400
                 '
                 onClick={() => setOpen(false)}
               >

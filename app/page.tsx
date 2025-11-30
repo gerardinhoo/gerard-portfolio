@@ -12,13 +12,7 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <section className='relative bg-gradient-to-b from-white to-orange-50 py-20'>
-        <div className='max-w-4xl mx-auto text-center'>
-          <About />
-        </div>
-        {/* Fade-out effect */}
-        <div className='absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent pointer-events-none'></div>
-      </section>
+      <About />
       <Projects />
       <Skills />
       <Resume />

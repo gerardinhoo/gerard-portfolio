@@ -19,18 +19,18 @@ export default function ParticlesBackground() {
         background: { color: 'transparent' },
         particles: {
           number: { value: 60 },
-          size: { value: 3 },
+          size: { value: 2 },
           color: { value: '#ffffff' },
-          opacity: { value: 0.7 },
-          move: { enable: true, speed: 1 },
-          links: { enable: true, color: '#ffffff', opacity: 0.1 },
+          opacity: { value: 0.4 },
+          move: { enable: true, speed: 0.7 },
+          links: { enable: true, color: '#ffffff', opacity: 0.05 },
         },
         interactivity: {
           events: { onHover: { enable: true, mode: 'repulse' } },
           modes: { repulse: { distance: 100 } },
         },
       }}
-      className='absolute inset-0 z-0'
+      className='absolute inset-0 z-0 opacity-60 pointer-events-none'
     />
   );
 }

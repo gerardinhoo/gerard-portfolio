@@ -5,26 +5,15 @@ import Image from 'next/image';
 
 export default function About() {
   return (
-    <section id='about' className='py-16 sm:py-20'>
-      <div className='max-w-4xl mx-auto px-5'>
-        {/* ✅ Background wrapper from heading → tags */}
-        <div
-          className='
-            rounded-3xl
-            border border-orange-100/70
-            bg-[linear-gradient(180deg,#fff,rgba(255,244,238,.6))]
-            shadow-[0_15px_50px_-20px_rgba(240,112,80,0.35)]
-            px-5 sm:px-8 py-10 sm:py-12
-            text-center
-          '
-        >
-          {/* Title */}
-          <h2 className='font-extrabold tracking-tight text-[#F07050] text-4xl sm:text-5xl mb-8'>
-            About Me
-          </h2>
+    <section id='about' className='bg-slate-950 py-20 md:py-24'>
+      <div className='max-w-3xl mx-auto px-6 md:px-10'>
+        <h2 className='font-heading text-3xl md:text-4xl font-semibold text-slate-50 text-center'>
+          About Me
+        </h2>
 
-          {/* Profile */}
-          <div className='mx-auto mb-8 sm:mb-10 w-40 h-40 sm:w-48 sm:h-48 rounded-full ring-4 ring-[#ff8b6a]/50 shadow-[0_15px_50px_-20px_rgba(240,112,80,0.55)] overflow-hidden'>
+        <div className='mt-10 bg-slate-900/80 border border-slate-800 rounded-3xl p-8 md:p-10 shadow-xl shadow-black/30 flex flex-col items-center text-center gap-6'>
+          {/* Avatar */}
+          <div className='relative h-32 w-32 md:h-36 md:w-36 rounded-full overflow-hidden border-2 border-cyan-400 shadow-[0_0_40px_rgba(34,211,238,0.35)]'>
             <Image
               src='/profile.jpeg'
               alt='Gerard Eku'
@@ -34,16 +23,18 @@ export default function About() {
               priority
             />
           </div>
-          {/* Experience highlight (kept as inner card for contrast) */}
-          <div className='mt-6 sm:mt-7 text-left bg-white/70 backdrop-blur-sm rounded-2xl border border-orange-100/70 p-5 sm:p-6 shadow-[0_10px_30px_-15px_rgba(240,112,80,0.35)]'>
-            <p className='text-slate-800 leading-relaxed text-base sm:text-lg max-w-3xl mx-auto'>
+
+          {/* About text */}
+          <div className='text-sm md:text-[15px] leading-relaxed text-slate-300 text-left md:text-center space-y-3'>
+            <p>
               I’m Gerard Eklu, a Software Engineer with 5 years of enterprise
-              experience who evolved into DevOps through hands-on projects and
-              advanced training. I blend full stack development with cloud,
-              CI/CD, and infrastructure expertise working across React, Next JS,
-              Node.js, Java, Terraform, and Google Cloud Platform.
+              experience who transitioned into DevOps through hands-on projects
+              and cloud engineering training. I specialize in building reliable,
+              scalable systems by combining full-stack development with CI/CD
+              automation, containerization, and infrastructure as code across
+              AWS and GCP.
             </p>
-            <p className='mt-4 text-slate-800 leading-relaxed text-base sm:text-lg'>
+            <p>
               At The Home Depot, I built high-performance React UIs, contributed
               to full stack apps, automated deployments with TeamCity & GitHub
               Actions, managed workloads on GKE with Spinnaker, and provisioned
@@ -53,8 +44,21 @@ export default function About() {
             </p>
           </div>
 
-          {/* Tags (still inside the background wrapper) */}
-          <div className='mt-7 sm:mt-8 flex flex-wrap justify-center gap-2'>
+          {/* Quick stats */}
+          <div className='mt-6 flex flex-wrap justify-center gap-3'>
+            <span className='inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-300'>
+              5 years software engineering
+            </span>
+            <span className='inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-300'>
+              Cloud &amp; DevOps on GCP &amp; AWS
+            </span>
+            <span className='inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-300'>
+              React · Next.js · Node.js · Terraform · CI/CD
+            </span>
+          </div>
+
+          {/* Tags */}
+          <div className='mt-6 flex flex-wrap justify-center gap-2'>
             {[
               'React',
               'Node.js',
@@ -70,22 +74,22 @@ export default function About() {
             ].map((t) => (
               <span
                 key={t}
-                className='text-sm sm:text-[0.95rem] px-3 py-1.5 rounded-full bg-orange-50 text-[#F07050] border border-orange-200'
+                className='inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-300'
               >
                 {t}
               </span>
             ))}
           </div>
-        </div>
 
-        {/* CTA lives OUTSIDE the background wrapper */}
-        <div className='mt-8 sm:mt-10 text-center'>
-          <a
-            href='#projects'
-            className='inline-flex items-center gap-2 rounded-full bg-[#F07050] text-white font-semibold px-6 py-3 hover:brightness-110 active:brightness-95 transition-shadow shadow-[0_8px_25px_-12px_rgba(240,112,80,0.65)]'
-          >
-            View Projects
-          </a>
+          {/* CTA */}
+          <div className='mt-6'>
+            <a
+              href='#projects'
+              className='inline-flex items-center gap-2 rounded-full bg-cyan-500 text-slate-950 font-medium px-6 py-3 hover:bg-cyan-400 transition-colors shadow-[0_0_25px_rgba(34,211,238,0.45)]'
+            >
+              View Projects
+            </a>
+          </div>
         </div>
       </div>
     </section>

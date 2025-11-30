@@ -25,7 +25,7 @@ const skills = [
     ],
   },
   {
-    title: 'Full Stack & Frontend',
+    title: 'Software Engineering',
     items: [
       { name: 'JavaScript', icon: 'javascript/javascript-original.svg' },
       { name: 'React', icon: 'react/react-original.svg' },
@@ -48,27 +48,20 @@ const skills = [
   },
 ];
 
+const getCategoryHeadingClass = (title: string) => {
+  if (title === 'DevOps & Cloud Engineering')
+    return 'font-heading text-lg md:text-xl text-cyan-400';
+  if (title === 'Software Engineering')
+    return 'font-heading text-lg md:text-xl text-orange-400';
+  return 'font-heading text-lg md:text-xl text-slate-50';
+};
+
 export default function Skills() {
   return (
-    <section
-      id='skills'
-      className='relative py-20 pt-24 pb-28 px-4 bg-[#F3E2DA] dark:bg-[#1a1a1a] text-black dark:text-white overflow-hidden'
-    >
-      {/* Top wave (mirror vertically) */}
-      <svg
-        className='pointer-events-none absolute top-0 left-0 w-full h-24 -scale-y-100'
-        viewBox='0 0 1440 120'
-        preserveAspectRatio='none'
-        aria-hidden='true'
-      >
-        <path
-          d='M0,64L60,58.7C120,53,240,43,360,48C480,53,600,75,720,85.3C840,96,960,96,1080,90.7C1200,85,1320,75,1380,69.3L1440,64L1440,0L0,0Z'
-          fill='#ffffff'
-        />
-      </svg>
-      <div className='max-w-6xl mx-auto text-center mt-10'>
+    <section id='skills' className='bg-slate-950 py-20 md:py-24'>
+      <div className='max-w-6xl mx-auto px-6 md:px-10'>
         <motion.h2
-          className='text-4xl font-bold mb-12 text-[#F07050]'
+          className='font-heading text-3xl md:text-4xl font-semibold text-slate-50 text-center'
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -76,8 +69,11 @@ export default function Skills() {
         >
           Skills
         </motion.h2>
+        <p className='mt-3 text-sm md:text-base text-slate-400 text-center max-w-2xl mx-auto'>
+          Technologies I use to design, automate, and operate reliable systems.
+        </p>
 
-        <div className='grid gap-12 md:grid-cols-3'>
+        <div className='mt-10 grid gap-6 md:gap-8 md:grid-cols-3'>
           {skills.map((category) => (
             <motion.div
               key={category.title}
@@ -85,51 +81,25 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
+              className='bg-slate-900/70 border border-slate-800 rounded-2xl p-6 shadow-lg shadow-black/25 flex flex-col gap-4 transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl hover:border-cyan-400/60'
             >
-              <h3 className='text-2xl font-semibold mb-4 text-[#F07050]'>
+              <h3 className={getCategoryHeadingClass(category.title)}>
                 {category.title}
               </h3>
-              <div className='flex flex-wrap justify-center gap-4'>
-                {category.items.map((skill, index) => (
-                  <motion.div
+              <div className='flex flex-wrap gap-2 mt-2'>
+                {category.items.map((skill) => (
+                  <span
                     key={skill.name}
-                    className='flex flex-col items-center w-20'
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.03 }}
-                    viewport={{ once: true }}
+                    className='inline-flex items-center rounded-full border border-slate-700 px-2.5 py-1 text-xs font-medium uppercase tracking-wide text-slate-300'
                   >
-                    <Image
-                      src={getIconSrc(skill.icon)}
-                      alt={skill.name}
-                      width={40}
-                      height={40}
-                      className='mb-1 h-10 w-10 object-contain'
-                      unoptimized={skill.icon.startsWith('/')} // ensure local SVGs render without optimization issues
-                    />
-                    <p className='text-xs font-medium text-center'>
-                      {skill.name}
-                    </p>
-                  </motion.div>
+                    {skill.name}
+                  </span>
                 ))}
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-
-      {/* Bottom wave */}
-      <svg
-        className='pointer-events-none absolute bottom-0 left-0 w-full h-24'
-        viewBox='0 0 1440 120'
-        preserveAspectRatio='none'
-        aria-hidden='true'
-      >
-        <path
-          d='M0,64L60,58.7C120,53,240,43,360,48C480,53,600,75,720,85.3C840,96,960,96,1080,90.7C1200,85,1320,75,1380,69.3L1440,64L1440,120L0,120Z'
-          fill='#ffffff'
-        />
-      </svg>
     </section>
   );
 }

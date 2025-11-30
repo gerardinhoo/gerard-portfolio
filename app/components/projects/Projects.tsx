@@ -5,35 +5,22 @@ export default function Projects() {
   return (
     <section
       id='projects'
-      className='
-        projects-section
-        scroll-mt-24
-        px-4 sm:px-6
-        py-16 sm:py-20 md:py-24
-      '
+      className='scroll-mt-24 bg-slate-950 px-4 sm:px-6 py-20 md:py-24'
     >
       <div className='max-w-6xl mx-auto'>
         {/* Section title */}
-        <h2
-          className='
-            projects-title
-            text-[clamp(2rem,6vw,3rem)]
-            text-center font-bold
-            mb-10 md:mb-12
-            text-[#F07050]
-          '
-        >
+        <h2 className='font-heading text-3xl md:text-4xl font-semibold text-slate-50 text-center mb-10 md:mb-12'>
           Projects
         </h2>
 
         {/* 🔧 DevOps & Cloud Projects */}
         <h3
           className='
-            text-xl sm:text-2xl font-bold
+            flex items-center gap-2
+            text-lg md:text-xl font-medium
+            text-cyan-400
             mb-4 sm:mb-6
             text-left
-            text-[#F07050]
-            flex items-center gap-2
           '
         >
           <span aria-hidden>🔧</span>
@@ -42,8 +29,8 @@ export default function Projects() {
 
         <div
           className='
-            grid grid-cols-1 md:grid-cols-2
-            gap-6 sm:gap-8
+            mt-10 grid grid-cols-1 md:grid-cols-2
+            gap-6 md:gap-8
             mb-12 md:mb-16
           '
         >
@@ -77,21 +64,20 @@ export default function Projects() {
           />
         </div>
 
-        {/* 💻 Full Stack & Frontend Projects */}
+        {/* 💻 Software Engineering Projects */}
         <h3
           className='
-            text-xl sm:text-2xl font-bold
+            font-heading text-lg md:text-xl text-orange-400
+            flex items-center gap-2
             mb-4 sm:mb-6
             text-left
-            text-[#F07050]
-            flex items-center gap-2
           '
         >
           <span aria-hidden>💻</span>
-          <span>Full Stack & Frontend Development</span>
+          <span>Software Engineering</span>
         </h3>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8'>
+        <div className='mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8'>
           <ProjectCard
             title='The Comfort Guardians HVAC Website'
             description='Freelance marketing site for an HVAC business built with Next.js, Tailwind CSS, and Framer Motion. Integrated Jobber for appointment booking, custom contact form with Nodemailer backend, and deployed to Vercel.'
