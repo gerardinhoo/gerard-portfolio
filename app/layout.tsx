@@ -25,18 +25,19 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Gerard Eklu - Cloud & DevOps Engineer",
-  description: "Engineering reliable, automated cloud systems across AWS & GCP with a DevOps-driven approach.",
+  description:
+    "Engineering reliable, automated cloud systems across AWS & GCP with a DevOps-driven approach.",
   icons: {
     icon: [
-      { url: "/favicon.ico?v=3" },
-      { url: "/favicon-32x32.png?v=3" }
+      { url: "/ge-favicon.ico", sizes: "any" },
+      { url: "/ge-favicon-32x32.png", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png?v=3",
-    shortcut: "/favicon.ico?v=3",
+    apple: "/apple-touch-icon.png",
+    shortcut: "/ge-favicon.ico",
   },
-  manifest: "/site.webmanifest?v=3",
-
+  manifest: "/site.webmanifest",
 };
+
 
 export default function RootLayout({
   children,
