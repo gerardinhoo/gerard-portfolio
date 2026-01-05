@@ -85,38 +85,6 @@ export default function Projects() {
             github='https://github.com/gerardinhoo/Devops-Journey/tree/main/simple-node-api'
             live='https://raw.githubusercontent.com/gerardinhoo/Devops-Journey/main/simple-node-api/assets/devops-workflow.png'
           />
-        </div>
-
-        {/* 💻 Software Engineering Projects */}
-        <h3
-          className='
-            font-heading text-lg md:text-xl text-orange-400
-            flex items-center gap-2
-            mb-4 sm:mb-6
-            text-left
-          '
-        >
-          <span aria-hidden>💻</span>
-          <span>Software Engineering</span>
-        </h3>
-
-        <div className='mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8'>
-          <ProjectCard
-            title='The Comfort Guardians HVAC Website'
-            description='Freelance marketing site for an HVAC business built with Next.js, Tailwind CSS, and Framer Motion. Integrated Jobber for appointment booking, custom contact form with Nodemailer backend, and deployed to Vercel.'
-            tags={[
-              'Next.js',
-              'Tailwind CSS',
-              'Framer Motion',
-              'TypeScript',
-              'Vercel',
-              'Nodemailer',
-              'Jobber Integration',
-              'SEO',
-            ]}
-            github='https://github.com/gerardinhoo/the-comfort-guardians'
-            live='https://www.thecomfortsguardians.com/'
-          />
           <ProjectCard
             title='Position Description Management App (Frontend Collaboration)'
             description='Contributed to the frontend of a web app designed to manage, update, and generate job descriptions across an organization (ASCO). Built UIs with Next JS and Tailwind CSS, implemented editable forms, profile templates, and integrated with backend APIs for dynamic data handling. Collaborated with another engineer to deliver the app to a client company, deployed via AWS Amplify.'
@@ -131,6 +99,23 @@ export default function Projects() {
             live='https://main.d22l2h3u9kpjbu.amplifyapp.com/'
           />
         </div>
+
+        {/* 💻 Software Engineering Projects */}
+        {/* <h3
+          className='
+            font-heading text-lg md:text-xl text-orange-400
+            flex items-center gap-2
+            mb-4 sm:mb-6
+            text-left
+          '
+        >
+          <span aria-hidden>💻</span>
+          <span>Software Engineering</span>
+        </h3>
+
+        <div className='mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8'>
+          
+        </div> */}
       </div>
     </section>
   );
