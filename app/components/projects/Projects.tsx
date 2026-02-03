@@ -58,6 +58,30 @@ export default function Projects() {
           />
 
           <ProjectCard
+            featured
+            title="TaskForge: Cloud, DevOps & SRE Enablement (CloudFormation, Docker, Jenkins, ECR, EC2, CloudWatch)"
+            description="
+            TaskForge is an end-to-end Cloud, DevOps, and SRE portfolio project demonstrating how to evolve an application from a local Dockerized setup into a production-ready AWS environment. The project showcases infrastructure provisioning with CloudFormation, containerized deployments using Docker and Docker Compose, CI pipelines with Jenkins, secure image storage in Amazon ECR, EC2-based runtime orchestration, and host-level observability using the CloudWatch Agent for system metrics.
+            "
+            tags={[
+              'AWS CloudFormation',
+              'EC2',
+              'Amazon ECR',
+              'Docker',
+              'Docker Compose',
+              'Jenkins',
+              'CI Pipelines',
+              'CloudWatch',
+              'SRE',
+              'Observability',
+              'Infrastructure as Code'
+            ]}
+            github="https://github.com/gerardinhoo/TaskForge"
+            live="https://raw.githubusercontent.com/gerardinhoo/TaskForge/main/docs/screenshots/architecture-overview.png"
+          />
+
+
+          <ProjectCard
             title='GCP Infrastructure Setup with Terraform'
             description='IaC on GCP: VPC, subnet, firewall, and Compute Engine VM provisioned with Terraform. Startup script installs Docker/Git. GCS remote backend + Terraform workspaces for isolated dev/prod. Includes architecture diagram & outputs.'
             tags={[
