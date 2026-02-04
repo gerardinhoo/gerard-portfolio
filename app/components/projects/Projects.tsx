@@ -95,7 +95,7 @@ export default function Projects() {
               'Workspaces',
             ]}
             github='https://github.com/gerardinhoo/Devops-Journey/tree/main/gcp-terraform-infra'
-            live='https://raw.githubusercontent.com/gerardinhoo/Devops-Journey/main/gcp-terraform-infra/assets/architecture-diagram.png'
+            live='https://raw.githubusercontent.com/gerardinhoo/Devops-Journey/main/gcp-terraform-infra/assets/architecture_diagram.png'
           />
 
           <ProjectCard
