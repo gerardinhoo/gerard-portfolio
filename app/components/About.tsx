@@ -27,9 +27,9 @@ export default function About() {
           {/* About text */}
           <div className='text-sm md:text-[15px] leading-relaxed text-slate-300 text-left md:text-center space-y-3'>
            <p>
-            I’m Gerard Eklu, a Cloud & DevOps Engineer with a software engineering foundation and hands-on experience building automated, scalable systems on AWS and GCP. I work with Terraform, Docker, Kubernetes, CI/CD, cloud security, and monitoring to deliver reliable cloud infrastructure. Previously at The Home Depot, I contributed to large-scale app development and automated deployments across enterprise environments.
-          </p>
+            I’m Gerard Eklu, a Cloud & DevOps Engineer with a strong software engineering foundation and hands-on experience building, deploying, and operating scalable systems on AWS and GCP. My work focuses on infrastructure automation, CI/CD pipelines, containerization, and observability, using tools like Terraform, Docker, Kubernetes, and modern CI platforms.
 
+            Previously at The Home Depot, I contributed to enterprise-scale applications and supported automated deployments across cloud and Kubernetes environments, working closely with development and platform teams.          </p>
           <p>
             Today, I focus on building real-world DevOps projects that integrate IaC, containerization, and production-ready cloud architectures across AWS and GCP.
           </p>
