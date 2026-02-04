@@ -13,7 +13,7 @@ export default function Resume() {
         <div className='mt-8 flex justify-center'>
           <div className='bg-slate-900/80 border border-slate-800 rounded-3xl px-8 py-6 shadow-lg shadow-black/25 flex flex-col items-center gap-4'>
             <a
-              href='/GERARD_EKLU_DevOps_Cloud_Engineer.pdf'
+              href='/GERARD EKLU-Cloud-Devops-engineer.pdf'
               target='_blank'
               rel='noopener noreferrer'
               className='inline-flex items-center gap-2 rounded-full bg-orange-500 px-5 py-2.5 text-sm font-semibold text-slate-950 hover:bg-orange-400 transition-colors'
