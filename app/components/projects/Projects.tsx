@@ -80,22 +80,26 @@ export default function Projects() {
             live="https://raw.githubusercontent.com/gerardinhoo/TaskForge/main/docs/screenshots/architecture-overview.png"
           />
 
-
           <ProjectCard
-            title='GCP Infrastructure Setup with Terraform'
-            description='IaC on GCP: VPC, subnet, firewall, and Compute Engine VM provisioned with Terraform. Startup script installs Docker/Git. GCS remote backend + Terraform workspaces for isolated dev/prod. Includes architecture diagram & outputs.'
+            title='GCP Infrastructure & Host Bootstrapping (Terraform + Ansible)'
+            description='End-to-end GCP infrastructure provisioning with Terraform (VPC, subnet, firewall rules, Compute Engine VM). Post-provisioning host configuration automated with Ansible for OS bootstrapping, package management, and Docker installation. Uses GCS remote backend and Terraform workspaces for isolated dev/prod environments. Includes architecture diagram and outputs.'
             tags={[
               'Terraform',
+              'Ansible',
               'GCP',
               'Compute Engine',
+              'Infrastructure as Code',
+              'Configuration Management',
+              'Docker',
               'GCS Backend',
               'Workspaces',
             ]}
             github='https://github.com/gerardinhoo/Devops-Journey/tree/main/gcp-terraform-infra'
             live='https://raw.githubusercontent.com/gerardinhoo/Devops-Journey/main/gcp-terraform-infra/assets/architecture-diagram.png'
           />
+
           <ProjectCard
-            title='Dockerized Node API && CI/CD to EC2 + Monitoring'
+            title='Dockerized Node API & CI/CD to EC2 + Monitoring'
             description='Containerized a Node/Express API, built & pushed images, and deployed via GitHub Actions (SSH) to AWS EC2. Added production-style observability with Prometheus scraping /metrics and a Grafana dashboard. Includes architecture diagram and runbooks.'
             tags={[
               'Node.js',
