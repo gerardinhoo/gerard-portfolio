@@ -1,5 +1,4 @@
 // app/components/About.tsx
-'use client';
 
 import Image from 'next/image';
 
@@ -80,9 +79,11 @@ export default function About() {
             <a
               href="https://github.com/gerardinhoo/Devops-Journey"
               target="_blank"
-              className="rounded-full bg-cyan-500 px-6 py-3 text-white font-medium shadow-md hover:bg-cyan-600 transition"
+              rel="noopener noreferrer"
+              className="rounded-full bg-cyan-500 px-6 py-3 text-white font-medium shadow-md hover:bg-cyan-600 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
             >
               Explore My Cloud & DevOps Journey
+              <span className='sr-only'>(opens in new tab)</span>
             </a>
 
             <h3 className="text-slate-200 text-sm sm:text-base font-medium text-center">

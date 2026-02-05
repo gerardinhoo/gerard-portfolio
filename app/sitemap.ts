@@ -1,11 +1,14 @@
-export default function sitemap() {
-  const base = 'https://gerardeklu.dev';
-  const now = new Date();
+import type { MetadataRoute } from 'next';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://gerardeklu.dev';
+
   return [
-    { url: `${base}/`, lastModified: now },
-    { url: `${base}/#projects`, lastModified: now },
-    { url: `${base}/#skills`, lastModified: now },
-    { url: `${base}/#resume`, lastModified: now },
-    { url: `${base}/#contact`, lastModified: now },
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 1,
+    },
   ];
 }

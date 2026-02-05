@@ -16,9 +16,11 @@ export default function Resume() {
               href='/GERARD EKLU-Cloud-Devops-engineer.pdf'
               target='_blank'
               rel='noopener noreferrer'
-              className='inline-flex items-center gap-2 rounded-full bg-orange-500 px-5 py-2.5 text-sm font-semibold text-slate-950 hover:bg-orange-400 transition-colors'
+              className='inline-flex items-center gap-2 rounded-full bg-orange-500 px-5 py-2.5 text-sm font-semibold text-slate-950 hover:bg-orange-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300'
             >
-              📄 View Resume
+              <span aria-hidden='true'>📄</span>
+              View Resume
+              <span className='sr-only'>(PDF, opens in new tab)</span>
             </a>
           </div>
         </div>

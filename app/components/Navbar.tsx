@@ -1,19 +1,56 @@
 // app/components/Navbar.tsx
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import Link from 'next/link';
+
+const NAV_LINKS = [
+  { href: '#about', label: 'About' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#contact', label: 'Contact' },
+] as const;
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Optional: lock page scroll when menu is open (mobile polish)
+  const closeMenu = useCallback(() => {
+    setOpen(false);
+    // Return focus to toggle button when closing
+    toggleButtonRef.current?.focus();
+  }, []);
+
+  // Lock page scroll when menu is open
   useEffect(() => {
     if (open) document.documentElement.style.overflow = 'hidden';
     else document.documentElement.style.overflow = '';
     return () => {
       document.documentElement.style.overflow = '';
     };
+  }, [open]);
+
+  // Handle Escape key to close menu
+  useEffect(() => {
+    if (!open) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [open, closeMenu]);
+
+  // Focus first menu item when menu opens
+  useEffect(() => {
+    if (open && menuRef.current) {
+      const firstLink = menuRef.current.querySelector('a');
+      firstLink?.focus();
+    }
   }, [open]);
 
   return (
@@ -32,12 +69,7 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <div className='hidden md:flex items-center gap-4'>
-          {[
-            { href: '#about', label: 'About' },
-            { href: '#projects', label: 'Projects' },
-            { href: '#skills', label: 'Skills' },
-            { href: '#contact', label: 'Contact' },
-          ].map(({ href, label }) => (
+          {NAV_LINKS.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
@@ -50,10 +82,12 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className='md:hidden inline-flex items-center rounded p-2 text-slate-100 hover:bg-slate-800/80'
+          ref={toggleButtonRef}
+          className='md:hidden inline-flex items-center rounded p-2 text-slate-100 hover:bg-slate-800/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400'
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          aria-label='Toggle navigation'
+          aria-controls='mobile-menu'
+          aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
         >
           <svg viewBox='0 0 24 24' className='size-6'>
             <path
@@ -66,9 +100,14 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile sheet */}
+      {/* Mobile menu */}
       {open && (
         <div
+          ref={menuRef}
+          id='mobile-menu'
+          role='dialog'
+          aria-modal='true'
+          aria-label='Navigation menu'
           className='
             md:hidden absolute left-0 right-0 top-full
             bg-slate-950/95 border-t border-slate-800
@@ -76,20 +115,15 @@ export default function Navbar() {
           '
         >
           <div className='mx-auto max-w-6xl px-6 py-3 flex flex-col'>
-            {[
-              { href: '#about', label: 'About' },
-              { href: '#projects', label: 'Projects' },
-              { href: '#skills', label: 'Skills' },
-              { href: '#contact', label: 'Contact' },
-            ].map(({ href, label }) => (
+            {NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
                 className='
                   w-full text-left py-3 text-sm font-medium uppercase tracking-[0.18em]
-                  text-slate-100 hover:text-cyan-400
+                  text-slate-100 hover:text-cyan-400 focus-visible:outline-none focus-visible:text-cyan-400
                 '
-                onClick={() => setOpen(false)}
+                onClick={closeMenu}
               >
                 {label}
               </Link>

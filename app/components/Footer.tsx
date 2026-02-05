@@ -1,9 +1,5 @@
 // components/Footer.tsx
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className='bg-slate-950 border-t border-slate-800 text-slate-300'>
       <div className='max-w-6xl mx-auto px-6 py-10 text-center space-y-5'>

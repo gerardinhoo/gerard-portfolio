@@ -1,5 +1,3 @@
-'use client';
-
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
@@ -37,19 +35,33 @@ export default function Contact() {
             />
 
             <div className="grid gap-4 sm:grid-cols-2">
-              <input
-                name="name"
-                placeholder="Your name (recruiter, hiring manager, or client)"
-                className={inputCls}
-                required
-              />
-              <input
-                name="email"
-                type="email"
-                required
-                placeholder="Your email so I can reply"
-                className={inputCls}
-              />
+              <div>
+                <label htmlFor="contact-name" className="sr-only">
+                  Your name
+                </label>
+                <input
+                  id="contact-name"
+                  name="name"
+                  placeholder="Your name (recruiter, hiring manager, or client)"
+                  className={inputCls}
+                  required
+                  autoComplete="name"
+                />
+              </div>
+              <div>
+                <label htmlFor="contact-email" className="sr-only">
+                  Your email
+                </label>
+                <input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="Your email so I can reply"
+                  className={inputCls}
+                  autoComplete="email"
+                />
+              </div>
             </div>
 
             {/* Subject shown in the email you receive */}
@@ -59,7 +71,11 @@ export default function Contact() {
               value="New message from gerardeklu.dev"
             />
 
+            <label htmlFor="contact-message" className="sr-only">
+              Your message
+            </label>
             <textarea
+              id="contact-message"
               name="message"
               required
               rows={5}
@@ -89,17 +105,21 @@ export default function Contact() {
             href="https://github.com/gerardinhoo"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-slate-100 px-4 py-1.5 text-sm font-medium text-slate-900 hover:bg-slate-200 transition-colors"
+            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-slate-100 px-4 py-1.5 text-sm font-medium text-slate-900 hover:bg-slate-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
           >
-            <FaGithub size={18} /> GitHub
+            <FaGithub size={18} aria-hidden='true' />
+            GitHub
+            <span className='sr-only'>(opens in new tab)</span>
           </a>
           <a
             href="https://linkedin.com/in/gerard-eklu-270422151/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-orange-400 px-4 py-1.5 text-sm font-medium text-orange-300 hover:bg-orange-400/10 transition-colors"
+            className="inline-flex items-center justify-center gap-1.5 rounded-full border border-orange-400 px-4 py-1.5 text-sm font-medium text-orange-300 hover:bg-orange-400/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
           >
-            <FaLinkedin size={18} /> LinkedIn
+            <FaLinkedin size={18} aria-hidden='true' />
+            LinkedIn
+            <span className='sr-only'>(opens in new tab)</span>
           </a>
         </div>
       </div>

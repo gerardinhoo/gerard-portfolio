@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
+import { useAccessibleAnimation } from '../hooks/useReducedMotion';
 
 interface ProjectCardProps {
   title: string;
@@ -9,7 +10,7 @@ interface ProjectCardProps {
   tags: string[];
   github: string;
   live?: string;
-  featured?: boolean,
+  featured?: boolean;
 }
 
 export default function ProjectCard({
@@ -18,20 +19,23 @@ export default function ProjectCard({
   tags,
   github,
   live,
-  featured = false
+  featured = false,
 }: ProjectCardProps) {
+  const { fadeInUp } = useAccessibleAnimation();
+
   return (
     <motion.div
-      className='bg-slate-900/70 border border-slate-800 rounded-2xl p-6 md:p-7 shadow-lg shadow-black/25 flex flex-col justify-between transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-xl hover:border-cyan-400/60'
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
+      className='bg-slate-900/70 border border-slate-800 rounded-2xl p-6 md:p-7 shadow-lg shadow-black/25 flex flex-col justify-between transition-shadow duration-200 hover:shadow-xl hover:border-cyan-400/60'
+      initial={fadeInUp.initial}
+      whileInView={fadeInUp.animate}
+      transition={fadeInUp.transition}
+      viewport={{ once: true }}
     >
       <div>
-           {/* ⭐ Featured Badge */}
+      {/* Featured Badge */}
       {featured && (
         <span className="inline-block mb-3 rounded-full bg-orange-500/20 text-orange-400 px-3 py-1 text-xs font-semibold tracking-wide">
-          ⭐ Featured Project
+          <span aria-hidden='true'>⭐</span> Featured Project
         </span>
       )}
         <h3 className='font-heading text-xl md:text-2xl text-slate-50'>{title}</h3>
@@ -54,18 +58,22 @@ export default function ProjectCard({
           href={github}
           target='_blank'
           rel='noopener noreferrer'
-          className='inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-medium bg-slate-100 text-slate-900 hover:bg-slate-200 transition-colors'
+          className='inline-flex items-center justify-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium bg-slate-100 text-slate-900 hover:bg-slate-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400'
         >
-          GitHub <ExternalLink size={14} />
+          GitHub
+          <ExternalLink size={14} aria-hidden='true' />
+          <span className='sr-only'>(opens in new tab)</span>
         </a>
         {live && (
           <a
             href={live}
             target='_blank'
             rel='noopener noreferrer'
-            className='inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-medium border border-cyan-400 text-cyan-300 hover:bg-cyan-400/10 transition-colors'
+            className='inline-flex items-center justify-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium border border-cyan-400 text-cyan-300 hover:bg-cyan-400/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400'
           >
-            Live Demo <ExternalLink size={14} />
+            Live Demo
+            <ExternalLink size={14} aria-hidden='true' />
+            <span className='sr-only'>(opens in new tab)</span>
           </a>
         )}
       </div>
