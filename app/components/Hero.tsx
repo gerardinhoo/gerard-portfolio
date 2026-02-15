@@ -13,19 +13,30 @@ export default function Hero() {
         <p className='mt-5 text-xl md:text-2xl text-slate-300 max-w-2xl'>
           Designing and deploying scalable, secure cloud applications across AWS and GCP, with expertise in CI/CD automation, infrastructure as code, and full-stack development.
         </p>
+            <p className='mt-4 text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-cyan-400'>
+          AWS · Terraform · CI/CD · Docker · Kubernetes · GCP
+        </p>
         <p className='mt-5 text-xl md:text-2xl text-slate-300 max-w-2xl'>
           AWS Certified Solutions Architect – Associate
         </p>
-        <p className='mt-4 text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-cyan-400'>
-          AWS · Terraform · CI/CD · Docker · Kubernetes · GCP
-        </p>
+        <a
+          href="https://www.credly.com/badges/1d63a978-e270-4da6-a561-571019aa6fbf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/aws-saa.png"
+            alt="AWS Certified Solutions Architect – Associate"
+            className="w-32 hover:scale-105 transition"
+          />
+        </a>
 
         <div className='mt-10 flex flex-wrap items-center gap-4'>
           <a
             href='#projects'
             className='inline-flex items-center justify-center rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-cyan-400'
           >
-            View Cloud Projects
+            View Cloud & Devops Projects
           </a>
           <a
             href='#contact'
