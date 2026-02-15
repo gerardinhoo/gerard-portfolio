@@ -26,19 +26,26 @@ export default function About() {
           {/* About text */}
           <div className='text-sm md:text-[15px] leading-relaxed text-slate-300 text-left md:text-center space-y-3'>
            <p>
-            I’m Gerard Eklu, a Cloud & DevOps Engineer with a strong software engineering foundation and hands-on experience building, deploying, and operating scalable systems on AWS and GCP. My work focuses on infrastructure automation, CI/CD pipelines, containerization, and observability, using tools like Terraform, Docker, Kubernetes, and modern CI platforms.
-
-            Previously at The Home Depot, I contributed to enterprise-scale applications and supported automated deployments across cloud and Kubernetes environments, working closely with development and platform teams.          </p>
-          <p>
-            Today, I focus on building real-world DevOps projects that integrate IaC, containerization, and production-ready cloud architectures across AWS and GCP.
+              I’m Gerard Eklu, a Cloud-focused Software Engineer with 5+ years of experience building and deploying scalable applications and automating cloud environments across AWS and GCP.
           </p>
+          <p>
+              I specialize in bridging software development and cloud infrastructure — designing CI/CD pipelines, implementing infrastructure as code with Terraform, containerizing applications with Docker, and supporting cloud-native deployments.
+          </p>
+          <p>
+              At The Home Depot, I contributed to enterprise-scale applications, modernized CI/CD workflows, and supported cloud deployments across GCP, Kubernetes, and secure secrets management systems.
+          </p>
+          <p>
+              Today, I focus on building real-world cloud projects that integrate infrastructure automation, containerization, and production-ready architectures.
+          </p>
+          
+          <p>AWS Certified Solutions Architect – Associate.</p>
 
           </div>
 
           {/* Quick stats */}
           <div className='mt-6 flex flex-wrap justify-center gap-3'>
              <span className='inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-300'>
-                5 years software engineering experience
+                5+ years software engineering experience
              </span>
              <span className='inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-300'>
                 Cloud & DevOps on AWS + GCP
@@ -51,19 +58,14 @@ export default function About() {
           {/* Tags */}
           <div className='mt-6 flex flex-wrap justify-center gap-2'>
             {[
-              'React',
-              'Node.js',
-              'Java',
-              'TeamCity',
-              'GitHub Actions',
-              'Jenkins',
-              'Terraform',
-              'GKE',
-              'Spinnaker',
-              'Vault',
-              'Trivy',
-              'GCP',
               'AWS',
+              'Terraform',
+              'CI/CD',
+              'Docker',
+              'Kubernetes',
+              'GCP',
+              'React',
+              'Node.js'
             ].map((t) => (
               <span
                 key={t}
@@ -80,15 +82,15 @@ export default function About() {
               href="https://github.com/gerardinhoo/Devops-Journey"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-cyan-500 px-6 py-3 text-white font-medium shadow-md hover:bg-cyan-600 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+              className="rounded-full bg-cyan-500 px-6 py-2 text-white font-medium shadow-md hover:bg-cyan-600 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
             >
               Explore My Cloud & DevOps Journey
               <span className='sr-only'>(opens in new tab)</span>
             </a>
 
-            <h3 className="text-slate-200 text-sm sm:text-base font-medium text-center">
-              Hands-on projects across AWS, GCP, Terraform, Docker, Kubernetes, CI/CD, and Cloud Security..
-            </h3>
+            <h6 className="text-slate-200 text-sm sm:text-base font-medium text-center">
+              Hands-on projects across AWS, GCP, Terraform, Docker, Kubernetes, CI/CD, and Cloud Security.
+            </h6>
 
             <p className="text-slate-400 text-sm text-center max-w-xl">
               A curated collection of real cloud deployments, IaC builds, CI/CD pipelines, containerized applications, monitoring setups, 
