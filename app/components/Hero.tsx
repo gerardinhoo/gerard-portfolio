@@ -8,7 +8,7 @@ export default function Hero() {
       <ParticlesBackground />
       <div className='relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center md:items-start px-6 md:px-10 py-24 md:py-32 lg:py-40 text-center md:text-left'>
         <h1 className='font-heading text-5xl md:text-6xl font-semibold text-white tracking-tight'>
-          Cloud & DevOps-Focused Software Engineer
+          Cloud & DevOps Engineer
         </h1>
         <p className='mt-5 text-xl md:text-2xl text-slate-300 max-w-2xl'>
           Designing and deploying scalable, secure cloud applications across AWS and GCP, with expertise in CI/CD automation, infrastructure as code, and full-stack development.
