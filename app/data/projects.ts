@@ -25,7 +25,7 @@ export const projects: Project[] = [
       'DevSecOps',
     ],
     github: 'https://github.com/gerardinhoo/TheAcquisitions',
-    live: 'https://raw.githubusercontent.com/gerardinhoo/TheAcquisitions/refs/heads/main/images/theacquisitions-architecture.png',
+    live: 'https://raw.githubusercontent.com/gerardinhoo/TheAcquisitions/refs/heads/main/images/the-acquisitions-architecture.png',
   },
 
   {
