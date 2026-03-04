@@ -5,9 +5,10 @@ import { useEffect, useState, useRef, useCallback } from 'react';
 import Link from 'next/link';
 
 const NAV_LINKS = [
-  { href: '#about', label: 'About' },
   { href: '#projects', label: 'Projects' },
   { href: '#skills', label: 'Skills' },
+  { href: '#about', label: 'About' },
+  { href: '#resume', label: 'Resume' },
   { href: '#contact', label: 'Contact' },
 ] as const;
 

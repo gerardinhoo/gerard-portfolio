@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import ParticlesBackground from './ParticlesBackground';
 
 export default function Hero() {
@@ -8,29 +9,34 @@ export default function Hero() {
       <ParticlesBackground />
       <div className='relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center md:items-start px-6 md:px-10 py-24 md:py-32 lg:py-40 text-center md:text-left'>
         <h1 className='font-heading text-5xl md:text-6xl font-semibold text-white tracking-tight'>
-          Cloud & DevOps Engineer <br />
-          with Software Engineering Background
+          Cloud & DevOps Engineer
         </h1>
-        <p className='mt-5 text-xl md:text-2xl text-slate-300 max-w-2xl'>
-          Designing and deploying scalable, secure cloud applications across AWS and GCP, with expertise in CI/CD automation, infrastructure as code, and full-stack development.
+        <p className='mt-5 text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed'>
+          I build automated cloud infrastructure and CI/CD pipelines on AWS and GCP.
+          5+ years shipping production software gives me the edge most infra engineers
+          lack — I understand what developers actually need.
         </p>
-            <p className='mt-4 text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-cyan-400'>
-          AWS · Terraform · CI/CD · Docker · Kubernetes · GCP
+        <p className='mt-4 text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-cyan-400'>
+          AWS · Terraform · CI/CD · Docker · GCP
         </p>
-        <p className='mt-5 text-xl md:text-2xl text-slate-300 max-w-2xl'>
-          AWS Certified Solutions Architect – Associate
-        </p>
-        <a
-          href="https://www.credly.com/badges/1d63a978-e270-4da6-a561-571019aa6fbf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/aws-saa.png"
-            alt="AWS Certified Solutions Architect – Associate"
-            className="w-32 hover:scale-105 transition"
-          />
-        </a>
+        <div className='mt-5 flex items-center gap-4'>
+          <a
+            href="https://www.credly.com/badges/1d63a978-e270-4da6-a561-571019aa6fbf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/aws-saa.png"
+              alt="AWS Certified Solutions Architect – Associate"
+              width={96}
+              height={96}
+              className="w-24 hover:scale-105 transition"
+            />
+          </a>
+          <p className='text-sm text-slate-400 max-w-xs leading-snug'>
+            Validated expertise in distributed systems, cost optimization, and high-availability architectures on AWS.
+          </p>
+        </div>
 
         <div className='mt-10 flex flex-wrap items-center justify-center md:justify-start gap-4'>
           <a

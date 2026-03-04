@@ -71,7 +71,9 @@ export default function ProjectCard({
             rel='noopener noreferrer'
             className='inline-flex items-center justify-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium border border-cyan-400 text-cyan-300 hover:bg-cyan-400/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400'
           >
-            Live Demo
+            {live.endsWith('.png') || live.endsWith('.jpg') || live.endsWith('.svg')
+              ? 'Architecture'
+              : 'Live Demo'}
             <ExternalLink size={14} aria-hidden='true' />
             <span className='sr-only'>(opens in new tab)</span>
           </a>

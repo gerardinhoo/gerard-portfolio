@@ -22,37 +22,28 @@ export default function About() {
               priority
             />
           </div>
-
           {/* About text */}
           <div className='text-sm md:text-[15px] leading-relaxed text-slate-300 text-left md:text-center space-y-3'>
-           <p>
-              I’m Gerard Eklu, a Cloud-focused Software Engineer with 5+ years of experience building and deploying scalable applications and automating cloud environments across AWS and GCP.
-          </p>
-          <p>
-              I specialize in bridging software development and cloud infrastructure — designing CI/CD pipelines, implementing infrastructure as code with Terraform, containerizing applications with Docker, and supporting cloud-native deployments.
-          </p>
-          <p>
-              At The Home Depot, I contributed to enterprise-scale applications, modernized CI/CD workflows, and supported cloud deployments across GCP, Kubernetes, and secure secrets management systems.
-          </p>
-          <p>
-              Today, I focus on building real-world cloud projects that integrate infrastructure automation, containerization, and production-ready architectures.
-          </p>
-          
-          <p>AWS Certified Solutions Architect – Associate.</p>
-
-          </div>
-
-          {/* Quick stats */}
-          <div className='mt-6 flex flex-wrap justify-center gap-3'>
-             <span className='inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-300'>
-                5+ years software engineering experience
-             </span>
-             <span className='inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-300'>
-                Cloud & DevOps on AWS + GCP
-             </span>
-             <span className='inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-300'>
-                Terraform · Kubernetes · CI/CD · Full-Stack
-             </span>
+            <p>
+              I&apos;m Gerard Eklu, a Cloud &amp; DevOps Engineer with 5+ years of software engineering experience.
+              At The Home Depot, I worked on enterprise-scale applications, modernized CI/CD pipelines
+              using GitHub Actions, TeamCity, and Spinnaker, and supported cloud deployments across GCP
+              and Kubernetes environments with secure secrets management.
+            </p>
+            <p>
+              I specialize in infrastructure automation with Terraform, containerization with Docker,
+              CI/CD pipeline design, and cloud-native architecture on AWS and GCP.
+              My software engineering background means I build infrastructure that developers actually want to use.
+            </p>
+            <p>
+              Most DevOps engineers learn infrastructure but struggle to understand developer workflows.
+              I spent 5 years building production software with React, Node.js, and TypeScript &mdash;
+              so I design CI/CD pipelines and cloud infrastructure from the developer&apos;s perspective.
+              I know what makes a deploy friction-free because I&apos;ve been on the other side.
+            </p>
+            <p className='text-cyan-400 font-medium'>
+              AWS Certified Solutions Architect &ndash; Associate
+            </p>
           </div>
 
           {/* Tags */}
@@ -62,10 +53,12 @@ export default function About() {
               'Terraform',
               'CI/CD',
               'Docker',
-              'Kubernetes',
+              'Ansible',
               'GCP',
+              'Observability',
               'React',
-              'Node.js'
+              'Node.js',
+              'TypeScript',
             ].map((t) => (
               <span
                 key={t}
