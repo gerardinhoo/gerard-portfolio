@@ -12,7 +12,7 @@ export const projects: Project[] = [
     featured: true,
     title: 'The Acquisitions: AWS CI/CD & Cloud Deployment',
     description:
-      'Automated end-to-end deployment of a containerized Node.js API to AWS — from GitHub push to production behind an ALB with HTTPS. Pipeline includes Docker builds, Trivy vulnerability scanning, EC2 deployment, and Prometheus/Grafana observability. Zero-downtime workflow with DevSecOps baked in.',
+      'Automated end-to-end deployment of a containerized Node.js API to AWS from GitHub push to production behind an ALB with HTTPS. Pipeline includes Docker builds, Trivy vulnerability scanning, EC2 deployment, and Prometheus/Grafana observability. Zero-downtime workflow with DevSecOps baked in.',
     tags: [
       'AWS',
       'CI/CD',
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     featured: true,
     title: 'TaskForge: AWS DevOps Platform with SRE Observability',
     description:
-      'Built a full AWS DevOps platform — CloudFormation for infrastructure provisioning, Jenkins CI for automated Docker builds and tests, ECR for image storage, and EC2 for container deployment. CloudWatch Agent collects host-level metrics for real-time operational visibility across the deployment lifecycle.',
+      'Built a full AWS DevOps platform. CloudFormation for infrastructure provisioning, Jenkins CI for automated Docker builds and tests, ECR for image storage, and EC2 for container deployment. CloudWatch Agent collects host-level metrics for real-time operational visibility across the deployment lifecycle.',
     tags: [
       'AWS',
       'CloudFormation',
@@ -52,7 +52,7 @@ export const projects: Project[] = [
   {
     title: 'GCP Infrastructure Automation (Terraform + Ansible)',
     description:
-      'Provisioned a full GCP environment (VPC, subnets, firewalls, Compute Engine) with Terraform, using GCS remote state and workspaces for environment isolation. Ansible handles post-provision configuration — OS bootstrapping through Docker runtime setup. End-to-end infrastructure lifecycle automation.',
+      'Provisioned a full GCP environment (VPC, subnets, firewalls, Compute Engine) with Terraform, using GCS remote state and workspaces for environment isolation. Ansible handles post-provision configuration, OS bootstrapping through Docker runtime setup. End-to-end infrastructure lifecycle automation.',
     tags: [
       'GCP',
       'Terraform',
@@ -73,7 +73,7 @@ export const projects: Project[] = [
   {
     title: 'Enterprise Job Platform: Cloud Delivery with AWS Amplify',
     description:
-      'Delivered a production web application for enterprise position management under ExM Technologies. Owned cloud deployment via AWS Amplify — CI/CD integration, environment configuration, and hosting. Built frontend with Next.js, TypeScript, and Tailwind CSS with API integrations for real-time data.',
+      'Delivered a production web application for enterprise position management under ExM Technologies. Owned cloud deployment via AWS Amplify. CI/CD integration, environment configuration, and hosting. Built frontend with Next.js, TypeScript, and Tailwind CSS with API integrations for real-time data.',
     tags: [
       'AWS Amplify',
       'CI/CD',

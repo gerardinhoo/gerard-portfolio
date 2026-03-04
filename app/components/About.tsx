@@ -37,7 +37,7 @@ export default function About() {
             </p>
             <p>
               Most DevOps engineers learn infrastructure but struggle to understand developer workflows.
-              I spent 5 years building production software with React, Node.js, and TypeScript &mdash;
+              I spent 5 years building production software with React, Node.js, and TypeScript
               so I design CI/CD pipelines and cloud infrastructure from the developer&apos;s perspective.
               I know what makes a deploy friction-free because I&apos;ve been on the other side.
             </p>
