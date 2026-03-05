@@ -50,6 +50,26 @@ export const projects: Project[] = [
   },
 
   {
+    featured: true,
+    title: 'AWS Infrastructure with Terraform — Multi-AZ, Auto Scaling, ALB',
+    description:
+      'Provisioned highly available AWS infrastructure with Terraform using reusable modules. Multi-AZ VPC with public/private subnets, Auto Scaling Group (2-4 instances) behind an ALB, NAT Gateways per AZ, IAM roles for SSM access, and S3 + DynamoDB state locking. CI/CD via GitHub Actions with OIDC authentication, no static credentials.',
+    tags: [
+      'AWS',
+      'Terraform',
+      'VPC',
+      'ALB',
+      'Auto Scaling',
+      'IAM',
+      'NAT Gateway',
+      'S3',
+      'GitHub Actions',
+      'High Availability',
+    ],
+    github: 'https://github.com/gerardinhoo/terraform-aws-production-vpc',
+  },
+
+  {
     title: 'GCP Infrastructure Automation (Terraform + Ansible)',
     description:
       'Provisioned a full GCP environment (VPC, subnets, firewalls, Compute Engine) with Terraform, using GCS remote state and workspaces for environment isolation. Ansible handles post-provision configuration, OS bootstrapping through Docker runtime setup. End-to-end infrastructure lifecycle automation.',
