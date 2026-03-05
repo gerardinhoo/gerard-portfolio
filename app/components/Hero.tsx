@@ -13,8 +13,7 @@ export default function Hero() {
         </h1>
         <p className='mt-5 text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed'>
           I build automated cloud infrastructure and CI/CD pipelines on AWS and GCP.
-          5+ years shipping production software gives me the edge most infra engineers
-          lack. I understand what developers actually need.
+          5+ years shipping production software helps me design infrastructure and pipelines with the developer experience in mind.
         </p>
         <p className='mt-4 text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-cyan-400'>
           AWS · Terraform · CI/CD · Docker · GCP
