@@ -31,15 +31,10 @@ export default function About() {
               and Kubernetes environments with secure secrets management.
             </p>
             <p>
-              I specialize in infrastructure automation with Terraform, containerization with Docker,
-              CI/CD pipeline design, and cloud-native architecture on AWS and GCP.
-              My software engineering background means I build infrastructure that developers actually want to use.
+             I specialize in infrastructure automation with Terraform, containerization with Docker, CI/CD pipeline design, and cloud-native architectures on AWS and GCP.
             </p>
             <p>
-              Most DevOps engineers learn infrastructure but struggle to understand developer workflows.
-              I spent 5 years building production software with React, Node.js, and TypeScript
-              so I design CI/CD pipelines and cloud infrastructure from the developer&apos;s perspective.
-              I know what makes a deploy friction-free because I&apos;ve been on the other side.
+             With 5 years of experience building production software using React, Node.js, and TypeScript, I design infrastructure and CI/CD pipelines with real developer workflows in mind focusing on reliable, friction-free deployments.
             </p>
             <p className='text-cyan-400 font-medium'>
               AWS Certified Solutions Architect &ndash; Associate
