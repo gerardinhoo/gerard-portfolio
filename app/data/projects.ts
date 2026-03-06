@@ -12,14 +12,16 @@ export const projects: Project[] = [
     featured: true,
     title: 'The Acquisitions: AWS CI/CD & Cloud Deployment',
     description:
-      'Automated end-to-end deployment of a containerized Node.js API to AWS from GitHub push to production behind an ALB with HTTPS. Pipeline includes Docker builds, Trivy vulnerability scanning, EC2 deployment, and Prometheus/Grafana observability. Zero-downtime workflow with DevSecOps baked in.',
+      'Automated end-to-end deployment of a containerized Node.js API to AWS — GitHub Actions CI/CD pipeline with Trivy vulnerability scanning, Docker builds pushed to ECR, and ECS Fargate deployment behind an ALB. Prometheus/Grafana observability stack for application metrics. Terraform-provisioned infrastructure with security group chaining.',
     tags: [
       'AWS',
       'CI/CD',
       'Docker',
-      'EC2',
+      'ECS Fargate',
       'ALB',
+      'ECR',
       'GitHub Actions',
+      'Terraform',
       'Prometheus',
       'Grafana',
       'DevSecOps',
@@ -53,20 +55,22 @@ export const projects: Project[] = [
     featured: true,
     title: 'AWS Infrastructure with Terraform — Multi-AZ, Auto Scaling, ALB',
     description:
-      'Provisioned highly available AWS infrastructure with Terraform using reusable modules. Multi-AZ VPC with public/private subnets, Auto Scaling Group (2-4 instances) behind an ALB, NAT Gateways per AZ, IAM roles for SSM access, and S3 + DynamoDB state locking. CI/CD via GitHub Actions with OIDC authentication, no static credentials.',
+      'Provisioned highly available AWS infrastructure with Terraform using reusable modules. Multi-AZ VPC with public/private subnets, Auto Scaling Group (2-4 instances) behind an ALB, NAT Gateways per AZ, and IAM roles for SSM access. CloudWatch alarms on CPU utilization drive auto scaling policies and notify an SNS topic for operational alerting. CI/CD via GitHub Actions with OIDC authentication, no static credentials.',
     tags: [
       'AWS',
       'Terraform',
       'VPC',
       'ALB',
       'Auto Scaling',
+      'CloudWatch',
+      'SNS',
       'IAM',
       'NAT Gateway',
-      'S3',
       'GitHub Actions',
       'High Availability',
     ],
     github: 'https://github.com/gerardinhoo/terraform-aws-production-vpc',
+    live: 'https://raw.githubusercontent.com/gerardinhoo/terraform-aws-production-vpc/main/docs/architecture.png',
   },
 
   {
