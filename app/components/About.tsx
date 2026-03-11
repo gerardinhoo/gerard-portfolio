@@ -10,18 +10,18 @@ export default function About() {
           About Me
         </h2>
 
-        <div className='mt-10 bg-slate-900/80 border border-slate-800 rounded-3xl p-8 md:p-10 shadow-xl shadow-black/30 flex flex-col items-center text-center gap-6'>
+        <div className="mt-10 bg-slate-900/80 border border-slate-800 rounded-3xl p-8 md:p-10 shadow-xl shadow-black/30 flex flex-col items-center text-center gap-6">
           {/* Avatar */}
-          <div className='relative h-32 w-32 md:h-36 md:w-36 rounded-full overflow-hidden border-2 border-cyan-400 shadow-[0_0_40px_rgba(34,211,238,0.35)]'>
+          <div className="relative h-40 w-40 md:h-44 md:w-44 rounded-full overflow-hidden border-2 border-cyan-400 shadow-[0_0_40px_rgba(34,211,238,0.35)] flex items-center justify-center bg-slate-900">
             <Image
-              src='/profile.jpg'
-              alt='Gerard Eku'
-              width={480}
-              height={480}
-              className='h-full w-full object-cover'
+              src="/profile.jpg"
+              alt="Gerard Eklu"
+              fill
+              className="object-cover object-[50%_18%] scale-100"
               priority
             />
           </div>
+
           {/* About text */}
           <div className='text-sm md:text-[15px] leading-relaxed text-slate-300 text-left md:text-center space-y-3'>
             <p>
