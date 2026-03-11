@@ -14,7 +14,7 @@ export default function About() {
           {/* Avatar */}
           <div className='relative h-32 w-32 md:h-36 md:w-36 rounded-full overflow-hidden border-2 border-cyan-400 shadow-[0_0_40px_rgba(34,211,238,0.35)]'>
             <Image
-              src='/profile.jpeg'
+              src='/profile.jpg'
               alt='Gerard Eku'
               width={480}
               height={480}
@@ -77,7 +77,7 @@ export default function About() {
             </a>
 
             <h6 className="text-slate-200 text-sm sm:text-base font-medium text-center">
-              Hands-on projects across AWS, GCP, Terraform, Docker, Kubernetes, CI/CD, and Cloud Security.
+              Hands-on projects across AWS, GCP, Terraform, Docker, CI/CD, and Cloud Security.
             </h6>
 
             <p className="text-slate-400 text-sm text-center max-w-xl">
