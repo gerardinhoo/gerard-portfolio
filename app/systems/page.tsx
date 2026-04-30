@@ -1,50 +1,42 @@
-'use client';
-
-import { motion } from 'framer-motion';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { useAccessibleAnimation } from '../hooks/useReducedMotion';
 import { systemCategories } from '../data/systems';
 
-export default function SystemsTeaser() {
-  const { fadeInUp } = useAccessibleAnimation();
+export const metadata: Metadata = {
+  title: 'Systems · Gerard Eklu',
+  description:
+    'Platform, infrastructure, and SRE work: IaC, containers, CI/CD, observability, cloud architecture, and scripting.',
+  alternates: { canonical: '/systems' },
+};
 
+export default function SystemsPage() {
   return (
-    <section
-      id='systems'
-      aria-labelledby='systems-heading'
-      className='scroll-mt-24 bg-slate-950 px-4 sm:px-6 py-20 md:py-24 border-t border-slate-900'
-    >
-      <div className='max-w-6xl mx-auto'>
-        <div className='mb-10 md:mb-12 text-center'>
+    <div className='bg-slate-950 text-slate-100 pt-28 md:pt-32 pb-20 md:pb-24'>
+      <div className='max-w-6xl mx-auto px-6 md:px-10'>
+        <header className='mb-12 md:mb-16 text-center'>
           <p className='text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-cyan-400'>
             Systems
           </p>
-          <h2
-            id='systems-heading'
-            className='mt-2 font-heading text-3xl md:text-4xl font-semibold text-slate-50'
-          >
-            Platform, Infrastructure, & SRE
-          </h2>
-          <p className='mt-3 text-sm md:text-base text-slate-400 max-w-2xl mx-auto'>
+          <h1 className='mt-3 font-heading text-4xl md:text-5xl font-semibold text-slate-50'>
+            Platform, Infrastructure, &amp; SRE
+          </h1>
+          <p className='mt-4 text-sm md:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed'>
             Six focus areas that cover how I design, automate, and operate the
             platforms applications run on.
           </p>
-        </div>
+        </header>
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6'>
           {systemCategories.map((cat) => (
-            <motion.a
+            <Link
               key={cat.slug}
               href={`/systems/${cat.slug}`}
-              initial={fadeInUp.initial}
-              whileInView={fadeInUp.animate}
-              transition={fadeInUp.transition}
-              viewport={{ once: true }}
               className='group bg-slate-900/70 border border-slate-800 rounded-2xl p-6 shadow-lg shadow-black/25 transition-all duration-200 hover:border-cyan-400/60 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400'
             >
-              <h3 className='font-heading text-lg md:text-xl text-slate-50 group-hover:text-cyan-300 transition-colors'>
+              <h2 className='font-heading text-lg md:text-xl text-slate-50 group-hover:text-cyan-300 transition-colors'>
                 {cat.title}
-              </h3>
+              </h2>
               <p className='mt-2 text-sm leading-relaxed text-slate-300'>
                 {cat.capability}
               </p>
@@ -66,10 +58,10 @@ export default function SystemsTeaser() {
                   className='transition-transform group-hover:translate-x-0.5'
                 />
               </div>
-            </motion.a>
+            </Link>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
