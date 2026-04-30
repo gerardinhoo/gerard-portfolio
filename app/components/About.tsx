@@ -1,10 +1,11 @@
 // app/components/About.tsx
 
 import Image from 'next/image';
+import { skillCategories, getCategoryHeadingClass } from '../data/skills';
 
 export default function About() {
   return (
-    <section id='about' className='bg-slate-950 py-20 md:py-24'>
+    <section id='about' className='scroll-mt-24 bg-slate-950 py-20 md:py-24'>
       <div className='max-w-3xl mx-auto px-6 md:px-10'>
         <h2 className='font-heading text-3xl md:text-4xl font-semibold text-slate-50 text-center'>
           About Me
@@ -85,6 +86,41 @@ export default function About() {
               and troubleshooting work completed throughout my DevOps engineering journey.
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* Inline Skills matrix */}
+      <div id='skills' className='scroll-mt-24 max-w-6xl mx-auto px-6 md:px-10 mt-16 md:mt-20'>
+        <div className='text-center'>
+          <h3 className='font-heading text-2xl md:text-3xl font-semibold text-slate-50'>
+            Skills
+          </h3>
+          <p className='mt-2 text-sm md:text-base text-slate-400 max-w-2xl mx-auto'>
+            Technologies I use to design, build, automate, and operate reliable systems.
+          </p>
+        </div>
+
+        <div className='mt-8 grid gap-6 md:gap-8 md:grid-cols-3'>
+          {skillCategories.map((category) => (
+            <div
+              key={category.title}
+              className='bg-slate-900/70 border border-slate-800 rounded-2xl p-6 shadow-lg shadow-black/25 flex flex-col gap-4'
+            >
+              <h4 className={getCategoryHeadingClass(category.variant)}>
+                {category.title}
+              </h4>
+              <div className='flex flex-wrap gap-2 mt-2'>
+                {category.items.map((skill) => (
+                  <span
+                    key={skill.name}
+                    className='inline-flex items-center rounded-full border border-slate-700 px-2.5 py-1 text-xs font-medium uppercase tracking-wide text-slate-300'
+                  >
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
