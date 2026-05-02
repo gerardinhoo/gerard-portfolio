@@ -70,7 +70,7 @@ export const systemCategories: SystemCategoryMeta[] = [
   },
   {
     slug: 'observability',
-    title: 'SRE & Observability',
+    title: 'Reliability & Observability',
     capability:
       'Dashboards, alarms, log retention, and runbooks for production systems.',
     tools: ['CloudWatch', 'Prometheus', 'Grafana'],

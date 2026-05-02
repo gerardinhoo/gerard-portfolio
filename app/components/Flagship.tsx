@@ -27,7 +27,7 @@ export default function Flagship() {
             Flagship
           </h2>
           <span className='hidden sm:inline-block text-xs font-medium uppercase tracking-[0.25em] text-orange-400'>
-            Full-Stack &middot; Cloud &middot; SRE
+            Full-Stack &middot; Cloud &middot; Reliability
           </span>
         </div>
 

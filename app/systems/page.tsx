@@ -6,7 +6,7 @@ import { systemCategories } from '../data/systems';
 export const metadata: Metadata = {
   title: 'Systems · Gerard Eklu',
   description:
-    'Platform, infrastructure, and SRE work: IaC, containers, CI/CD, observability, cloud architecture, and scripting.',
+    'Platform, infrastructure, and reliability work: IaC, containers, CI/CD, observability, cloud architecture, and scripting.',
   alternates: { canonical: '/systems' },
 };
 
@@ -19,7 +19,7 @@ export default function SystemsPage() {
             Systems
           </p>
           <h1 className='mt-3 font-heading text-4xl md:text-5xl font-semibold text-slate-50'>
-            Platform, Infrastructure, &amp; SRE
+            Platform, Infrastructure, &amp; Reliability
           </h1>
           <p className='mt-4 text-sm md:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed'>
             Six focus areas that cover how I design, automate, and operate the

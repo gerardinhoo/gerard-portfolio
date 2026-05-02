@@ -23,7 +23,7 @@ export default function SystemsTeaser() {
             id='systems-heading'
             className='mt-2 font-heading text-3xl md:text-4xl font-semibold text-slate-50'
           >
-            Platform, Infrastructure, & SRE
+            Platform, Infrastructure, & Reliability
           </h2>
           <p className='mt-3 text-sm md:text-base text-slate-400 max-w-2xl mx-auto'>
             Six focus areas that cover how I design, automate, and operate the

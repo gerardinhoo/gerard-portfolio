@@ -109,7 +109,7 @@ export const projects: Project[] = [
     domains: ['work', 'systems'],
     category: 'cicd',
     featured: true,
-    title: 'TaskForge: AWS DevOps Platform with SRE Observability',
+    title: 'TaskForge: AWS DevOps Platform with Observability',
     description:
       'Built a full AWS DevOps platform. CloudFormation for infrastructure provisioning, Jenkins CI for automated Docker builds and tests, ECR for image storage, and EC2 for container deployment. CloudWatch Agent collects host-level metrics for real-time operational visibility across the deployment lifecycle.',
     tags: [
@@ -121,7 +121,6 @@ export const projects: Project[] = [
       'EC2',
       'CI/CD',
       'CloudWatch',
-      'SRE',
       'Observability',
     ],
     github: 'https://github.com/gerardinhoo/TaskForge',

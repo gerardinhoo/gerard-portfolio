@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gerard Eklu Portfolio
 
-## Getting Started
+Source code for Gerard Eklu's personal portfolio site, built to showcase
+flagship product engineering work, cloud/platform projects, and supporting
+case studies.
 
-First, run the development server:
+The portfolio is designed to do two things well:
+- give recruiters and hiring managers a fast, high-signal overview
+- give engineers deeper technical context through project pages and case studies
+
+## What the site highlights
+
+- `PitchPulse26` as the flagship full-stack project
+- selected cloud, infrastructure, and CI/CD work
+- systems-focused capability areas like IaC, observability, containers, and reliability
+- resume, about, and contact sections for quick review
+
+## Tech stack
+
+- Next.js App Router
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+
+## Main sections
+
+- `/` - homepage with flagship project, selected work, systems teaser, about, resume, and contact
+- `/work` - curated project portfolio
+- `/work/pitchpulse26` - flagship case study
+- `/systems` - capability-oriented systems view
+- `/engineering` - product/full-stack engineering work
+- `/about` - background and positioning
+- `/resume` - resume download/view
+
+## Project structure
+
+```text
+gerard-portfolio/
+├── app/
+│   ├── components/        # homepage, flagship, systems, resume, and shared UI
+│   ├── data/              # projects, systems categories, skills
+│   ├── work/              # project listing and flagship case study routes
+│   ├── systems/           # systems overview and category routes
+│   ├── about/
+│   ├── engineering/
+│   └── resume/
+├── public/
+│   ├── pitchpulse26/      # screenshots used in the flagship case study
+│   └── icons/             # static assets
+└── README.md
+```
+
+## Local development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Run lint checks:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+```
 
-## Learn More
+## Content model
 
-To learn more about Next.js, take a look at the following resources:
+Project content is primarily driven from:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [app/data/projects.ts](./app/data/projects.ts)
+- [app/data/systems.ts](./app/data/systems.ts)
+- [app/data/skills.ts](./app/data/skills.ts)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This keeps high-level portfolio copy centralized and makes it easier to evolve
+project positioning without scattering text across the app.
 
-## Deploy on Vercel
+## Case study approach
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The portfolio uses a layered presentation model:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- homepage and project cards for quick scanning
+- project case studies for deeper technical explanation
+- architecture diagrams and screenshots for fast visual understanding
+
+The `PitchPulse26` case study is the current flagship example of this approach,
+combining:
+- product overview
+- system architecture
+- deployment and observability story
+- screenshots
+- tradeoffs and next steps
+
+## Notes
+
+- Internal planning notes and improvement backlog are kept private, not in this repo.
+- Supporting project repos may evolve independently from the portfolio copy, but highlighted projects should stay aligned with the evidence shown publicly.
+
+## Future improvements
+
+- expand supporting case studies for selected projects
+- continue simplifying top-level navigation and positioning
+- add more architecture visuals where they improve scanability
+- keep project screenshots curated and high-signal
