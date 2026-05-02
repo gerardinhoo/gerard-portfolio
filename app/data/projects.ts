@@ -59,9 +59,9 @@ export const projects: Project[] = [
     featured: true,
     title: 'PitchPulse26: Full-Stack World Cup Prediction Platform',
     tagline:
-      'A production prediction platform \u2014 React + Node on serverless AWS, infra-as-code, monitored, with a documented rollback path.',
+      'A full-stack World Cup prediction platform built on serverless AWS with Terraform, CI/CD, CloudWatch monitoring, and a documented rollback path.',
     description:
-      'End-to-end full-stack platform: React + TypeScript frontend on AWS Amplify, Node.js + Express API on Lambda + API Gateway, Prisma ORM on serverless PostgreSQL (Neon). Infrastructure provisioned with Terraform (Lambda, API Gateway, Amplify, SSM, CloudWatch). CI/CD via GitHub Actions with OIDC. CloudWatch dashboard, alarms on Lambda errors / API 5xx / Lambda duration, and a documented production rollback runbook.',
+      'Built an end-to-end prediction platform for World Cup 2026 group-stage matches. The frontend runs on AWS Amplify, the backend is an Express API on Lambda behind API Gateway, and Prisma + Neon PostgreSQL power match, prediction, standings, and leaderboard data. Infrastructure is managed with Terraform, DNS is handled through Route 53 for a Namecheap-purchased domain, deployments run through GitHub Actions, and operations are supported by CloudWatch dashboards, alarms, and a documented rollback runbook.',
     tags: [
       'React',
       'TypeScript',
@@ -77,6 +77,7 @@ export const projects: Project[] = [
       'Rollback',
     ],
     github: 'https://github.com/gerardinhoo/PitchPulse26',
+    live: 'https://www.pitchpulse26.com/',
   },
   {
     slug: 'the-acquisitions',

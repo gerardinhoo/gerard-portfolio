@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 import { useAccessibleAnimation } from '../hooks/useReducedMotion';
 import { projects } from '../data/projects';
 
@@ -67,12 +68,12 @@ export default function Flagship() {
               </div>
 
               <div className='mt-7 flex flex-wrap items-center gap-3'>
-                <a
+                <Link
                   href='/work/pitchpulse26'
                   className='inline-flex items-center justify-center gap-1.5 rounded-full bg-orange-500 px-5 py-2 text-sm font-semibold text-slate-950 transition hover:bg-orange-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300'
                 >
                   Read case study
-                </a>
+                </Link>
                 <a
                   href={flagship.github}
                   target='_blank'
@@ -122,7 +123,7 @@ export default function Flagship() {
                 </div>
                 <div className='rounded-xl border border-slate-800 bg-slate-950/60 p-3'>
                   <dt className='text-slate-500 uppercase tracking-wider text-[10px] mb-1'>CI/CD</dt>
-                  <dd className='text-slate-200'>GitHub Actions (OIDC)</dd>
+                  <dd className='text-slate-200'>GitHub Actions</dd>
                 </div>
                 <div className='rounded-xl border border-slate-800 bg-slate-950/60 p-3 col-span-2'>
                   <dt className='text-slate-500 uppercase tracking-wider text-[10px] mb-1'>Observability</dt>

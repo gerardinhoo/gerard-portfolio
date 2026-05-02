@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import { findProjectBySlug } from '../../data/projects';
@@ -6,12 +7,9 @@ import { findProjectBySlug } from '../../data/projects';
 export const metadata: Metadata = {
   title: 'PitchPulse26 \u2014 Flagship Case Study \u00b7 Gerard Eklu',
   description:
-    'A production World Cup prediction platform: React + Node on serverless AWS, infrastructure as code, monitored, with a documented rollback path.',
+    'A full-stack World Cup prediction platform on serverless AWS with Terraform, Route 53 DNS, CloudWatch monitoring, and a documented rollback path.',
   alternates: { canonical: '/work/pitchpulse26' },
 };
-
-const HEALTH_URL =
-  'https://fqblsiujfj.execute-api.us-east-1.amazonaws.com/api/health';
 
 export default function PitchPulse26CaseStudy() {
   const project = findProjectBySlug('pitchpulse26');
@@ -37,8 +35,9 @@ export default function PitchPulse26CaseStudy() {
             end&#8209;to&#8209;end.
           </h1>
           <p className='mt-4 text-lg md:text-xl text-orange-300/90 leading-relaxed'>
-            React + Node on serverless AWS, infrastructure as code, monitored,
-            with a documented rollback path.
+            A full-stack World Cup prediction platform on serverless AWS with
+            Terraform, Route 53 DNS, CloudWatch monitoring, and a documented
+            rollback path.
           </p>
 
           <div className='mt-7 flex flex-wrap items-center gap-3'>
@@ -54,16 +53,18 @@ export default function PitchPulse26CaseStudy() {
                 <span className='sr-only'>(opens in new tab)</span>
               </a>
             )}
-            <a
-              href={HEALTH_URL}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='inline-flex items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium border border-cyan-400 text-cyan-300 hover:bg-cyan-400/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400'
-            >
-              Health Check
-              <ExternalLink size={14} aria-hidden='true' />
-              <span className='sr-only'>(opens in new tab)</span>
-            </a>
+            {project?.live && (
+              <a
+                href={project.live}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='inline-flex items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium border border-cyan-400 text-cyan-300 hover:bg-cyan-400/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400'
+              >
+                Live App
+                <ExternalLink size={14} aria-hidden='true' />
+                <span className='sr-only'>(opens in new tab)</span>
+              </a>
+            )}
           </div>
         </header>
 
@@ -83,8 +84,36 @@ export default function PitchPulse26CaseStudy() {
           </p>
         </Section>
 
-        {/* 3. System architecture */}
-        <Section eyebrow='02' title='System Architecture'>
+        {/* 3. Product experience */}
+        <Section eyebrow='02' title='Product Experience'>
+          <p>
+            The strongest proof that this is a real product is that the core
+            user flows are visible in the UI: making predictions, tracking
+            personal progress, setting official results as an admin, and seeing
+            scored outcomes reflected on the leaderboard.
+          </p>
+          <ScreenshotFigure
+            src='/pitchpulse26/matches-overview.png'
+            alt='PitchPulse26 matches page showing personal dashboard progress cards and quick navigation filters by status and group.'
+            title='Matches Workflow'
+            caption='The Matches page combines prediction workflow, user progress, and quick navigation by match status and group so the user can find upcoming picks without losing their place.'
+          />
+          <ScreenshotFigure
+            src='/pitchpulse26/admin-results.png'
+            alt='PitchPulse26 admin page showing pending matches with score inputs for setting official results.'
+            title='Admin Result Entry'
+            caption='Admin users can set official match results, which then move matches into a completed state and drive downstream standings and leaderboard scoring.'
+          />
+          <ScreenshotFigure
+            src='/pitchpulse26/leaderboard.png'
+            alt='PitchPulse26 leaderboard page showing scoring rules, the current user standing, and ranked players with points.'
+            title='Leaderboard Feedback Loop'
+            caption='Leaderboard standings are derived from scored matches and prediction accuracy, with the current user context kept visible so the product payoff is easy to understand.'
+          />
+        </Section>
+
+        {/* 4. System architecture */}
+        <Section eyebrow='03' title='System Architecture'>
           <p>
             The runtime is fully serverless on AWS. The React + TypeScript
             client is delivered through AWS Amplify; the API is a Node + Express
@@ -95,15 +124,20 @@ export default function PitchPulse26CaseStudy() {
           </p>
           <ArchitectureDiagram />
           <p>
+            The custom domain was purchased through Namecheap, while DNS is
+            managed in Route 53 through a hosted zone that points the public
+            frontend domain to Amplify.
+          </p>
+          <p>
             CloudWatch holds dashboards, alarms, and structured logs. SSM
             Parameter Store provides runtime configuration. GitHub Actions
-            owns CI/CD via OIDC &mdash; no static credentials ever live in the
-            pipeline.
+            handles CI/CD, while Amplify deploys the frontend from the `main`
+            branch and the backend deploy workflow packages and updates Lambda.
           </p>
         </Section>
 
-        {/* 4. Tech decisions */}
-        <Section eyebrow='03' title='Tech Decisions & Tradeoffs'>
+        {/* 5. Tech decisions */}
+        <Section eyebrow='04' title='Tech Decisions & Tradeoffs'>
           <div className='space-y-6'>
             <Decision
               title='Lambda + API Gateway over ECS'
@@ -148,13 +182,14 @@ export default function PitchPulse26CaseStudy() {
           </div>
         </Section>
 
-        {/* 5. CI/CD */}
-        <Section eyebrow='04' title='CI/CD Pipeline'>
+        {/* 6. CI/CD */}
+        <Section eyebrow='05' title='CI/CD Pipeline'>
           <p>
             GitHub Actions builds, tests, packages, and deploys on every push
             to <code className='px-1 py-0.5 rounded bg-slate-900 text-cyan-300 text-[12px]'>main</code>.
-            Authentication to AWS uses OIDC: the workflow assumes a deploy role
-            with least-privilege scoped to Lambda, S3, and API Gateway.
+            The backend workflow runs tests, packages a Lambda artifact, uploads
+            it to S3, updates Lambda, and verifies the deployment with a health
+            check. Frontend delivery is handled through Amplify Git integration.
           </p>
           <PipelineDiagram />
           <p>
@@ -164,8 +199,8 @@ export default function PitchPulse26CaseStudy() {
           </p>
         </Section>
 
-        {/* 6. Reliability & observability */}
-        <Section eyebrow='05' title='Reliability & Observability'>
+        {/* 7. Reliability & observability */}
+        <Section eyebrow='06' title='Reliability & Observability'>
           <p>
             CloudWatch is the source of truth in production. The dashboard
             and alarms are managed by Terraform under{' '}
@@ -225,10 +260,17 @@ export default function PitchPulse26CaseStudy() {
               /aws/apigateway/pitchpulse26
             </li>
           </ul>
+
+          <ScreenshotFigure
+            src='/pitchpulse26/cloudwatch-dashboard.png'
+            alt='CloudWatch dashboard for PitchPulse26 showing Lambda invocations, errors, duration, and API Gateway 4xx metrics.'
+            title='Production Monitoring'
+            caption='Production monitoring is handled through a CloudWatch dashboard tracking Lambda invocations, errors, duration, and API Gateway failure signals so deployment and runtime issues are visible quickly.'
+          />
         </Section>
 
-        {/* 7. Rollback */}
-        <Section eyebrow='06' title='Production Rollback'>
+        {/* 8. Rollback */}
+        <Section eyebrow='07' title='Production Rollback'>
           <p>
             Production incidents need a known-good escape hatch. The rollback
             runbook lives in the repo at{' '}
@@ -258,8 +300,8 @@ export default function PitchPulse26CaseStudy() {
           </p>
         </Section>
 
-        {/* 8. Security */}
-        <Section eyebrow='07' title='Security Posture'>
+        {/* 9. Security */}
+        <Section eyebrow='08' title='Security Posture'>
           <ul className='space-y-3 text-sm md:text-base text-slate-300'>
             <Bullet>
               JWT authentication, 1-day expiry, secret loaded from environment.
@@ -290,8 +332,8 @@ export default function PitchPulse26CaseStudy() {
           </ul>
         </Section>
 
-        {/* 9. Outcomes */}
-        <Section eyebrow='08' title='Outcomes & Operating Targets'>
+        {/* 10. Outcomes */}
+        <Section eyebrow='09' title='Outcomes & Operating Targets'>
           <p>
             The goal is not to claim production scale that does not exist; the
             goal is to operate against explicit targets I would defend in a
@@ -331,12 +373,16 @@ export default function PitchPulse26CaseStudy() {
           </dl>
         </Section>
 
-        {/* 10. What's next */}
-        <Section eyebrow='09' title="What I'd Do Next">
+        {/* 11. What's next */}
+        <Section eyebrow='10' title="What I'd Do Next">
           <ul className='space-y-3 text-sm md:text-base text-slate-300'>
             <Bullet>
               Add canary deploys via Lambda alias weighting (10% &rarr; 100%)
               so deploys are revertible without a redeploy.
+            </Bullet>
+            <Bullet>
+              Refactor the Matches page to reduce orchestration complexity and
+              split critical data loads from secondary UI context.
             </Bullet>
             <Bullet>
               Move to RDS Proxy or pgBouncer if concurrent prediction load
@@ -465,33 +511,78 @@ function Stat({
   );
 }
 
-/* ---------- Inline diagrams (placeholders for Step 7) ---------- */
+function ScreenshotFigure({
+  src,
+  alt,
+  title,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  title: string;
+  caption: string;
+}) {
+  return (
+    <figure className='mt-6 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/40'>
+      <div className='border-b border-slate-800 px-4 py-3'>
+        <p className='text-[10px] uppercase tracking-[0.25em] text-cyan-400'>
+          {title}
+        </p>
+      </div>
+      <div className='bg-slate-950/60 p-2 md:p-3'>
+        <Image
+          src={src}
+          alt={alt}
+          width={1365}
+          height={768}
+          className='h-auto w-full rounded-xl border border-slate-800'
+        />
+      </div>
+      <figcaption className='px-4 py-4 text-sm leading-relaxed text-slate-400'>
+        {caption}
+      </figcaption>
+    </figure>
+  );
+}
+
+/* ---------- Inline diagrams ---------- */
 
 function ArchitectureHero() {
   return (
     <div
       role='img'
-      aria-label='High-level architecture: Browser through Amplify, API Gateway, Lambda + Prisma, to Neon Postgres, with CloudWatch, SSM, and GitHub Actions on the side.'
+      aria-label='High-level architecture: user traffic resolves through Route 53 to Amplify, the React app talks to API Gateway and Lambda, Prisma connects to Neon PostgreSQL, and CloudWatch, SSM, and GitHub Actions support runtime operations.'
       className='mt-10 rounded-2xl border border-slate-800 bg-slate-900/40 p-6 md:p-8'
     >
       <p className='text-[10px] uppercase tracking-[0.25em] text-slate-500 mb-4'>
         Runtime overview
       </p>
-      <div className='flex flex-col items-stretch gap-3 text-center text-xs md:text-sm'>
-        <DiagramNode label='Browser' />
-        <DiagramArrow />
-        <DiagramNode label='AWS Amplify (React + TypeScript)' tone='cyan' />
-        <DiagramArrow />
-        <DiagramNode label='API Gateway' tone='cyan' />
-        <DiagramArrow />
-        <DiagramNode label='Lambda &mdash; Node + Express + Prisma' tone='cyan' />
-        <DiagramArrow />
-        <DiagramNode label='Neon PostgreSQL (serverless)' tone='orange' />
+      <div className='grid grid-cols-1 gap-4 text-center text-xs md:text-sm'>
+        <div className='grid grid-cols-1 gap-3 md:grid-cols-4 md:items-center'>
+          <DiagramNode label='User Browser' />
+          <DiagramNode label='Route 53 (DNS)' tone='cyan' />
+          <DiagramNode label='AWS Amplify' tone='cyan' />
+          <DiagramNode label='React + TypeScript Frontend' tone='cyan' />
+        </div>
+        <DiagramArrow direction='down' />
+        <div className='grid grid-cols-1 gap-3 md:grid-cols-4 md:items-center'>
+          <DiagramNode label='API Gateway' tone='cyan' />
+          <DiagramNode label='AWS Lambda' tone='cyan' />
+          <DiagramNode label='Express API' tone='cyan' />
+          <DiagramNode label='Prisma ORM' tone='cyan' />
+        </div>
+        <DiagramArrow direction='down' />
+        <div className='grid grid-cols-1 gap-3 md:grid-cols-3 md:items-center'>
+          <SidecarNode label='Namecheap (Registrar)' />
+          <DiagramNode label='Neon PostgreSQL' tone='orange' />
+          <SidecarNode label='SSM + CloudWatch' />
+        </div>
       </div>
-      <div className='mt-5 grid grid-cols-3 gap-2 text-center text-[11px]'>
-        <SidecarNode label='CloudWatch' />
-        <SidecarNode label='SSM' />
+      <div className='mt-5 grid grid-cols-2 gap-2 text-center text-[11px] md:grid-cols-4'>
         <SidecarNode label='GitHub Actions' />
+        <SidecarNode label='S3 Lambda Artifacts' />
+        <SidecarNode label='Rollback Runbook' />
+        <SidecarNode label='CloudWatch Alarms' />
       </div>
     </div>
   );
@@ -501,38 +592,75 @@ function ArchitectureDiagram() {
   return (
     <div
       role='img'
-      aria-label='Detailed architecture flow with sidecar services for monitoring, configuration, and deployment.'
+      aria-label='Detailed architecture flow showing DNS, frontend delivery, backend runtime, database access, and operational support services for PitchPulse26.'
       className='my-6 rounded-2xl border border-slate-800 bg-slate-950/60 p-6'
     >
       <p className='text-[10px] uppercase tracking-[0.25em] text-slate-500 mb-4'>
-        Architecture detail
+        High-level system architecture
       </p>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-4 text-xs md:text-sm'>
-        <div className='space-y-2'>
-          <p className='text-slate-500 uppercase tracking-wider text-[10px]'>
-            Client
-          </p>
-          <DiagramNode label='React + Vite + Tailwind' />
-          <DiagramNode label='React Router' />
-          <DiagramNode label='Vitest test suite' />
+      <div className='space-y-6'>
+        <div className='grid grid-cols-1 gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-stretch text-xs md:text-sm'>
+          <DiagramColumn
+            title='Access'
+            nodes={[
+              { label: 'User Browser' },
+              { label: 'Namecheap (Registrar)', tone: 'muted' },
+              { label: 'Route 53 Hosted Zone', tone: 'cyan' },
+            ]}
+          />
+          <DiagramArrow direction='right' />
+          <DiagramColumn
+            title='Frontend'
+            nodes={[
+              { label: 'AWS Amplify', tone: 'cyan' },
+              { label: 'React + TypeScript + Vite', tone: 'cyan' },
+              { label: 'Custom domain: www.pitchpulse26.com', tone: 'muted' },
+            ]}
+          />
+          <DiagramArrow direction='right' />
+          <DiagramColumn
+            title='API & Data'
+            nodes={[
+              { label: 'API Gateway', tone: 'cyan' },
+              { label: 'Lambda + Express API', tone: 'cyan' },
+              { label: 'Prisma ORM', tone: 'cyan' },
+              { label: 'Neon PostgreSQL', tone: 'orange' },
+            ]}
+          />
         </div>
-        <div className='space-y-2'>
-          <p className='text-slate-500 uppercase tracking-wider text-[10px]'>
-            API
-          </p>
-          <DiagramNode label='Express 5' tone='cyan' />
-          <DiagramNode label='Zod validation' tone='cyan' />
-          <DiagramNode label='JWT + bcrypt' tone='cyan' />
-          <DiagramNode label='Prisma + adapter-neon (WS)' tone='cyan' />
+
+        <div className='grid grid-cols-1 gap-4 md:grid-cols-2 text-xs md:text-sm'>
+          <DiagramColumn
+            title='Configuration & Observability'
+            nodes={[
+              { label: 'SSM Parameter Store', tone: 'muted' },
+              { label: 'CloudWatch Logs', tone: 'muted' },
+              { label: 'Dashboard + Alarms', tone: 'muted' },
+            ]}
+          />
+          <DiagramColumn
+            title='Delivery & Recovery'
+            nodes={[
+              { label: 'GitHub Actions CI/CD', tone: 'muted' },
+              { label: 'S3 Versioned Lambda Artifacts', tone: 'muted' },
+              { label: 'Documented Rollback Runbook', tone: 'muted' },
+            ]}
+          />
         </div>
-        <div className='space-y-2'>
-          <p className='text-slate-500 uppercase tracking-wider text-[10px]'>
-            Platform
+
+        <div className='rounded-xl border border-slate-800 bg-slate-900/40 p-4 text-xs md:text-sm text-slate-300'>
+          <p className='text-slate-500 uppercase tracking-wider text-[10px] mb-2'>
+            Primary request path
           </p>
-          <DiagramNode label='Lambda + API Gateway' tone='orange' />
-          <DiagramNode label='Amplify (frontend hosting)' tone='orange' />
-          <DiagramNode label='Neon PostgreSQL' tone='orange' />
-          <DiagramNode label='CloudWatch + SSM' tone='orange' />
+          <p className='leading-relaxed'>
+            User Browser <span className='text-slate-500'>&rarr;</span> Route 53{' '}
+            <span className='text-slate-500'>&rarr;</span> Amplify{' '}
+            <span className='text-slate-500'>&rarr;</span> React frontend{' '}
+            <span className='text-slate-500'>&rarr;</span> API Gateway{' '}
+            <span className='text-slate-500'>&rarr;</span> Lambda / Express{' '}
+            <span className='text-slate-500'>&rarr;</span> Prisma{' '}
+            <span className='text-slate-500'>&rarr;</span> Neon PostgreSQL
+          </p>
         </div>
       </div>
     </div>
@@ -588,12 +716,13 @@ function DiagramNode({
   tone = 'default',
 }: {
   label: string;
-  tone?: 'default' | 'cyan' | 'orange';
+  tone?: 'default' | 'cyan' | 'orange' | 'muted';
 }) {
   const tones = {
     default: 'border-slate-700 bg-slate-900 text-slate-200',
     cyan: 'border-cyan-500/40 bg-cyan-500/10 text-cyan-200',
     orange: 'border-orange-500/40 bg-orange-500/10 text-orange-200',
+    muted: 'border-slate-800 bg-slate-950/40 text-slate-400',
   } as const;
   return (
     <div
@@ -603,13 +732,19 @@ function DiagramNode({
   );
 }
 
-function DiagramArrow() {
+function DiagramArrow({
+  direction,
+}: {
+  direction: 'down' | 'right';
+}) {
   return (
     <span
       aria-hidden='true'
-      className='mx-auto block text-slate-600 text-lg leading-none'
+      className={`mx-auto block text-slate-600 text-lg leading-none ${
+        direction === 'right' ? 'hidden md:block self-center' : ''
+      }`}
     >
-      &darr;
+      {direction === 'right' ? '\u2192' : '\u2193'}
     </span>
   );
 }
@@ -618,6 +753,34 @@ function SidecarNode({ label }: { label: string }) {
   return (
     <div className='rounded-lg border border-slate-800 bg-slate-950/40 px-2 py-1.5 text-slate-400'>
       {label}
+    </div>
+  );
+}
+
+function DiagramColumn({
+  title,
+  nodes,
+}: {
+  title: string;
+  nodes: Array<{
+    label: string;
+    tone?: 'default' | 'cyan' | 'orange' | 'muted';
+  }>;
+}) {
+  return (
+    <div className='rounded-xl border border-slate-800 bg-slate-900/40 p-4'>
+      <p className='text-slate-500 uppercase tracking-wider text-[10px] mb-3'>
+        {title}
+      </p>
+      <div className='space-y-2'>
+        {nodes.map((node) => (
+          <DiagramNode
+            key={node.label}
+            label={node.label}
+            tone={node.tone ?? 'default'}
+          />
+        ))}
+      </div>
     </div>
   );
 }
