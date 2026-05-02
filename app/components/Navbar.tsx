@@ -22,7 +22,6 @@ const NAV_ITEMS: NavItem[] = [
     label: 'Systems',
     items: [{ href: '/systems', label: 'All Systems' }, ...SYSTEMS_ITEMS],
   },
-  { kind: 'link', href: '/engineering', label: 'Engineering' },
   { kind: 'link', href: '/about', label: 'About' },
   { kind: 'link', href: '/resume', label: 'Resume' },
   { kind: 'link', href: '/#contact', label: 'Contact' },

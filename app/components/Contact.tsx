@@ -13,7 +13,7 @@ export default function Contact() {
           Let’s Connect
         </h2>
         <p className="mt-3 text-sm md:text-base text-slate-400 text-center max-w-2xl mx-auto">
-          I’m open to DevOps, Cloud, and Software Engineering roles, as well as freelance projects.
+          I’m open to full-stack, cloud platform, and software engineering roles, as well as freelance projects.
           Share a bit about the opportunity and how I can help.
         </p>
 

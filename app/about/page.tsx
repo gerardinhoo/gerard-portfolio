@@ -4,7 +4,7 @@ import About from '../components/About';
 export const metadata: Metadata = {
   title: 'About · Gerard Eklu',
   description:
-    'About Gerard Eklu \u2014 Full-Stack & Platform Engineer with 5+ years shipping production software, infrastructure, and CI/CD.',
+    'About Gerard Eklu \u2014 Full-Stack & Cloud Platform Engineer with 5+ years shipping production software, infrastructure, and CI/CD.',
   alternates: { canonical: '/about' },
 };
 

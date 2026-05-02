@@ -6,8 +6,8 @@ export default function Resume() {
           Resume
         </h2>
         <p className='mt-3 text-sm md:text-base text-slate-400 text-center max-w-2xl mx-auto'>
-          Download my up-to-date resume highlighting my experience in software
-          engineering, DevOps, and cloud engineering.
+          Download my up-to-date resume highlighting product engineering, cloud
+          infrastructure, CI/CD, and production delivery experience.
         </p>
 
         <div className='mt-8 flex justify-center'>

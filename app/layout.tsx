@@ -27,9 +27,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const siteConfig = {
-  title: 'Gerard Eklu - Cloud & DevOps Engineer',
+  title: 'Gerard Eklu - Full-Stack & Cloud Platform Engineer',
   description:
-    'Engineering reliable, automated cloud systems across AWS & GCP with a DevOps-driven approach.',
+    'I build product-facing applications and the cloud infrastructure, CI/CD, and observability that keep them reliable.',
   url: 'https://gerardeklu.dev',
   image: '/og-image.png', // Add a 1200x630 image to /public
 } as const;
@@ -63,6 +63,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: 'Gerard Eklu - Cloud & DevOps Engineer',
+        alt: 'Gerard Eklu - Full-Stack & Cloud Platform Engineer',
       },
     ],
   },

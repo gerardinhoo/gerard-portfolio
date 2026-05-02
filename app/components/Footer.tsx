@@ -4,7 +4,7 @@ export default function Footer() {
     <footer className='bg-slate-950 border-t border-slate-800 text-slate-300'>
       <div className='max-w-6xl mx-auto px-6 py-10 text-center space-y-5'>
         <p>&copy; {new Date().getFullYear()} <span className="text-slate-300 font-bold">Gerard Eklu</span></p>
-        <p className="text-xs mt-1">Cloud & DevOps Engineer &bull; AWS | GCP</p>
+        <p className="text-xs mt-1">Full-Stack & Cloud Platform Engineer &bull; AWS | GCP</p>
         <p className="text-xs mt-1">Built with Next.js & Tailwind CSS</p>
       </div>
     </footer>

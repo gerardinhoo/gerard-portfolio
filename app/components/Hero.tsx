@@ -12,15 +12,15 @@ export default function Hero() {
           Full-Stack &middot; Cloud &middot; Platform &middot; Reliability
         </p>
         <h1 className='font-heading text-5xl md:text-6xl font-semibold text-white tracking-tight'>
-          Full-Stack & Platform Engineer
+          Full-Stack & Cloud Platform Engineer
         </h1>
         <p className='mt-5 text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed'>
-          I design, build, and operate production systems end to end &mdash;
-          React and Node.js applications, the AWS infrastructure they run on,
-          and the CI/CD and observability that keep them reliable.
+          I build product-facing applications and the cloud infrastructure,
+          CI/CD, and observability that keep them reliable &mdash; from React
+          and Node.js code to AWS deployment and operational support.
         </p>
         <p className='mt-4 text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-cyan-400'>
-          React &middot; TypeScript &middot; Node.js &middot; PostgreSQL &middot; AWS &middot; Terraform &middot; Kubernetes &middot; CI/CD &middot; Observability
+          React &middot; TypeScript &middot; Node.js &middot; PostgreSQL &middot; AWS &middot; Terraform &middot; CI/CD &middot; Observability
         </p>
         <div className='mt-5 flex items-center gap-4'>
           <a

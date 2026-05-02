@@ -26,16 +26,16 @@ export default function About() {
           {/* About text */}
           <div className='text-sm md:text-[15px] leading-relaxed text-slate-300 text-left md:text-center space-y-3'>
             <p>
-              I&apos;m Gerard Eklu, a Cloud &amp; DevOps Engineer with 5+ years of software engineering experience.
+              I&apos;m Gerard Eklu, a Full-Stack &amp; Cloud Platform Engineer with 5+ years of software engineering experience.
               At The Home Depot, I worked on enterprise-scale applications, modernized CI/CD pipelines
               using GitHub Actions, TeamCity, and Spinnaker, and supported cloud deployments across GCP
               and Kubernetes environments with secure secrets management.
             </p>
             <p>
-             I specialize in infrastructure automation with Terraform, containerization with Docker, CI/CD pipeline design, and cloud-native architectures on AWS and GCP.
+             I specialize in product-minded engineering backed by infrastructure automation with Terraform, containerization with Docker, CI/CD pipeline design, and cloud-native architectures on AWS and GCP.
             </p>
             <p>
-             With 5 years of experience building production software using React, Node.js, and TypeScript, I design infrastructure and CI/CD pipelines with real developer workflows in mind focusing on reliable, friction-free deployments.
+             With experience building production software using React, Node.js, and TypeScript, I design infrastructure and CI/CD pipelines with real developer workflows in mind, focusing on reliable, low-friction delivery and operational clarity.
             </p>
             <p className='text-cyan-400 font-medium'>
               AWS Certified Solutions Architect &ndash; Associate
@@ -73,17 +73,17 @@ export default function About() {
               rel="noopener noreferrer"
               className="rounded-full bg-cyan-500 px-6 py-2 text-white font-medium shadow-md hover:bg-cyan-600 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
             >
-              Explore My Cloud & DevOps Journey
+              Explore My Cloud & Platform Work
               <span className='sr-only'>(opens in new tab)</span>
             </a>
 
             <h6 className="text-slate-200 text-sm sm:text-base font-medium text-center">
-              Hands-on projects across AWS, GCP, Terraform, Docker, CI/CD, and Cloud Security.
+              Hands-on projects across AWS, GCP, Terraform, Docker, CI/CD, and observability.
             </h6>
 
             <p className="text-slate-400 text-sm text-center max-w-xl">
-              A curated collection of real cloud deployments, IaC builds, CI/CD pipelines, containerized applications, monitoring setups, 
-              and troubleshooting work completed throughout my DevOps engineering journey.
+              A curated collection of cloud deployments, infrastructure-as-code builds, CI/CD pipelines, containerized applications, monitoring setups,
+              and troubleshooting work that supports the systems side of my portfolio.
             </p>
           </div>
         </div>
@@ -93,10 +93,10 @@ export default function About() {
       <div id='skills' className='scroll-mt-24 max-w-6xl mx-auto px-6 md:px-10 mt-16 md:mt-20'>
         <div className='text-center'>
           <h3 className='font-heading text-2xl md:text-3xl font-semibold text-slate-50'>
-            Skills
+            Core Skills
           </h3>
           <p className='mt-2 text-sm md:text-base text-slate-400 max-w-2xl mx-auto'>
-            Technologies I use to design, build, automate, and operate reliable systems.
+            A focused snapshot of the technologies I use most across product delivery, cloud infrastructure, and operational reliability.
           </p>
         </div>
 
@@ -119,6 +119,14 @@ export default function About() {
                   </span>
                 ))}
               </div>
+              <p className='text-xs leading-relaxed text-slate-500'>
+                {category.title === 'Cloud & Platform' &&
+                  'Infrastructure, deployment, and production operations.'}
+                {category.title === 'Application Engineering' &&
+                  'Frontend and backend technologies used in flagship product work.'}
+                {category.title === 'Workflow & Delivery' &&
+                  'Tools and habits that support team execution and maintainability.'}
+              </p>
             </div>
           ))}
         </div>

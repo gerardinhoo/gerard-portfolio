@@ -13,7 +13,8 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   const work = getProjectsByDomain('work');
   const flagship = work.find((p) => p.flagship);
-  const others = work.filter((p) => !p.flagship);
+  const selected = work.filter((p) => p.featured && !p.flagship);
+  const additional = work.filter((p) => !p.featured && !p.flagship);
 
   return (
     <div className='bg-slate-950 text-slate-100 pt-28 md:pt-32 pb-20 md:pb-24'>
@@ -59,11 +60,39 @@ export default function WorkPage() {
           </Link>
         )}
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8'>
-          {others.map((project) => (
-            <ProjectCard key={project.slug} {...project} />
-          ))}
-        </div>
+        <section>
+          <div className='mb-8 text-center'>
+            <h2 className='font-heading text-2xl md:text-3xl font-semibold text-slate-50'>
+              Selected Projects
+            </h2>
+            <p className='mt-2 text-sm text-slate-400 max-w-2xl mx-auto'>
+              The strongest supporting projects for cloud infrastructure, CI/CD, and delivery depth.
+            </p>
+          </div>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8'>
+            {selected.map((project) => (
+              <ProjectCard key={project.slug} {...project} />
+            ))}
+          </div>
+        </section>
+
+        {additional.length > 0 && (
+          <section className='mt-16'>
+            <div className='mb-8 text-center'>
+              <h2 className='font-heading text-2xl md:text-3xl font-semibold text-slate-50'>
+                Additional Work
+              </h2>
+              <p className='mt-2 text-sm text-slate-400 max-w-2xl mx-auto'>
+                Supporting projects that add range, context, or professional delivery experience.
+              </p>
+            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8'>
+              {additional.map((project) => (
+                <ProjectCard key={project.slug} {...project} />
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );
