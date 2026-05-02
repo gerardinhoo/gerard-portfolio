@@ -62,7 +62,6 @@ export const metadata: Metadata = {
         url: siteConfig.image,
         width: 1200,
         height: 630,
-        alt: 'Gerard Eklu - Cloud & DevOps Engineer',
         alt: 'Gerard Eklu - Full-Stack & Cloud Platform Engineer',
       },
     ],
@@ -91,11 +90,11 @@ export default function RootLayout({
         <link rel='preconnect' href='https://cdn.jsdelivr.net' crossOrigin='anonymous' />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${spaceGrotesk.variable} antialiased font-sans`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${spaceGrotesk.variable} min-h-screen bg-slate-950 text-slate-100 antialiased font-sans flex flex-col`}
       >
         <SkipLink />
         <Navbar />
-        <main id='main-content'>{children}</main>
+        <main id='main-content' className='flex-1'>{children}</main>
         <Footer />
       </body>
     </html>

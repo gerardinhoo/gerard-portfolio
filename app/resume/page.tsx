@@ -9,9 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function ResumePage() {
-  return (
-    <div className='pt-20 md:pt-24'>
-      <Resume />
-    </div>
-  );
+  return <Resume />;
 }

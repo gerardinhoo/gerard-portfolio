@@ -84,9 +84,9 @@ export const projects: Project[] = [
     domains: ['work', 'systems'],
     category: 'cicd',
     featured: true,
-    title: 'The Acquisitions: AWS CI/CD & Cloud Deployment',
+    title: 'The Acquisitions: Container Delivery on AWS',
     description:
-      'Automated end-to-end deployment of a containerized Node.js API to AWS — GitHub Actions CI/CD pipeline with Trivy vulnerability scanning, Docker builds pushed to ECR, and ECS Fargate deployment behind an ALB. Prometheus/Grafana observability stack for application metrics. Terraform-provisioned infrastructure with security group chaining.',
+      'Built an end-to-end delivery pipeline for a containerized Node.js API on AWS. GitHub Actions runs build, test, image scanning, and deployment; Docker images are pushed to ECR; ECS Fargate serves the application behind an ALB; and Terraform provisions the supporting infrastructure. Prometheus and Grafana add runtime visibility on top of the deployment flow.',
     tags: [
       'AWS',
       'CI/CD',
@@ -109,9 +109,9 @@ export const projects: Project[] = [
     domains: ['work', 'systems'],
     category: 'cicd',
     featured: true,
-    title: 'TaskForge: AWS DevOps Platform with Observability',
+    title: 'TaskForge: AWS Delivery Platform with Observability',
     description:
-      'Built a full AWS DevOps platform. CloudFormation for infrastructure provisioning, Jenkins CI for automated Docker builds and tests, ECR for image storage, and EC2 for container deployment. CloudWatch Agent collects host-level metrics for real-time operational visibility across the deployment lifecycle.',
+      'Built a delivery platform around Jenkins, Docker, ECR, and EC2 to automate how application changes move into AWS. CloudFormation provisions the base infrastructure, Jenkins handles build and deployment stages, and CloudWatch Agent collects host-level metrics so runtime health is visible after release, not just during the pipeline run.',
     tags: [
       'AWS',
       'CloudFormation',
@@ -132,9 +132,9 @@ export const projects: Project[] = [
     domains: ['work', 'systems'],
     category: 'infrastructure',
     featured: true,
-    title: 'AWS Infrastructure with Terraform — Multi-AZ, Auto Scaling, ALB',
+    title: 'Terraform AWS Platform: Multi-AZ, ALB, Auto Scaling',
     description:
-      'Provisioned highly available AWS infrastructure with Terraform using reusable modules. Multi-AZ VPC with public/private subnets, Auto Scaling Group (2-4 instances) behind an ALB, NAT Gateways per AZ, and IAM roles for SSM access. CloudWatch alarms on CPU utilization drive auto scaling policies and notify an SNS topic for operational alerting. CI/CD via GitHub Actions with OIDC authentication, no static credentials.',
+      'Provisioned a reusable AWS infrastructure baseline with Terraform for highly available application hosting. The stack includes a multi-AZ VPC, public and private subnets, an ALB, an Auto Scaling Group, NAT gateways, IAM roles for SSM access, and CloudWatch alarms tied to scaling behavior. GitHub Actions handles CI/CD for infrastructure changes without static cloud credentials.',
     tags: [
       'AWS',
       'Terraform',

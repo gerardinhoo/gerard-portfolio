@@ -5,7 +5,10 @@ import { skillCategories, getCategoryHeadingClass } from '../data/skills';
 
 export default function About() {
   return (
-    <section id='about' className='scroll-mt-24 bg-slate-950 py-20 md:py-24'>
+    <section
+      id='about'
+      className='scroll-mt-24 bg-slate-950 pt-28 md:pt-32 pb-20 md:pb-24'
+    >
       <div className='max-w-3xl mx-auto px-6 md:px-10'>
         <h2 className='font-heading text-3xl md:text-4xl font-semibold text-slate-50 text-center'>
           About Me
@@ -18,7 +21,9 @@ export default function About() {
               src="/profile.jpg"
               alt="Gerard Eklu"
               fill
-              className="object-cover object-[50%_18%] scale-100"
+              sizes="(min-width: 768px) 176px, 160px"
+              quality={100}
+              className="object-cover object-[50%_18%]"
               priority
             />
           </div>
