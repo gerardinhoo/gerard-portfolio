@@ -9,6 +9,8 @@ export interface SystemCategoryMeta {
   tools: string[];
   /** Bulleted capabilities shown on the dedicated category page. */
   capabilities: string[];
+  /** Related project slugs shown on the dedicated category page. */
+  projectSlugs: string[];
   /** Notes / lessons learned shown at the bottom of the category page. */
   notes: string[];
 }
@@ -24,8 +26,13 @@ export const systemCategories: SystemCategoryMeta[] = [
       'Reusable Terraform modules for VPCs, ASGs, ALBs, and Lambda APIs',
       'Remote state on S3 with DynamoDB locking; GCS backend on GCP',
       'Workspace-based environment isolation (dev / staging / prod)',
-      'OIDC-based pipeline authentication \u2014 no static credentials',
+      'Pipeline-based infrastructure validation and deployment workflows',
       'Post-provision configuration with Ansible',
+    ],
+    projectSlugs: [
+      'terraform-aws-production-vpc',
+      'gcp-terraform-infra',
+      'taskforge',
     ],
     notes: [
       'Module boundaries matter more than module count \u2014 group by lifecycle.',
@@ -33,26 +40,8 @@ export const systemCategories: SystemCategoryMeta[] = [
     ],
   },
   {
-    slug: 'containers',
-    title: 'Containers & Orchestration',
-    capability:
-      'Build, ship, and run containerized workloads on ECS and Kubernetes.',
-    tools: ['Docker', 'ECS Fargate', 'EKS', 'Kubernetes'],
-    capabilities: [
-      'Multi-stage Dockerfiles tuned for image size and cold-start',
-      'ECS Fargate services behind ALBs with health checks',
-      'Kubernetes workload manifests (Deployment, Service, Ingress, ConfigMap)',
-      'EKS deployments with IRSA-based pod authentication',
-      'Local Docker Compose environments that mirror production wiring',
-    ],
-    notes: [
-      'Health checks are not optional \u2014 they are a contract.',
-      'ARM vs AMD image architecture mismatches are a quiet source of failures.',
-    ],
-  },
-  {
     slug: 'cicd',
-    title: 'CI/CD',
+    title: 'CI/CD & Delivery',
     capability:
       'Automated pipelines from commit to production with security gates.',
     tools: ['GitHub Actions', 'Jenkins', 'TeamCity', 'Trivy'],
@@ -62,6 +51,11 @@ export const systemCategories: SystemCategoryMeta[] = [
       'Push to ECR, deploy to ECS Fargate / Lambda',
       'Jenkins pipelines integrated with Nexus and ECR',
       'Plan-on-PR / apply-on-merge for Terraform changes',
+    ],
+    projectSlugs: [
+      'the-acquisitions',
+      'taskforge',
+      'terraform-aws-production-vpc',
     ],
     notes: [
       'Secrets belong in OIDC + IAM \u2014 not in pipeline variables.',
@@ -81,6 +75,7 @@ export const systemCategories: SystemCategoryMeta[] = [
       'Structured log retention policies tuned per service',
       'Documented production rollback runbooks',
     ],
+    projectSlugs: ['pitchpulse26', 'taskforge', 'the-acquisitions'],
     notes: [
       'Alarms without runbooks generate noise, not action.',
       'Log retention is a cost lever and a compliance lever \u2014 set it deliberately.',
@@ -99,26 +94,15 @@ export const systemCategories: SystemCategoryMeta[] = [
       'Least-privilege IAM roles for compute and CI/CD',
       'AWS Certified Solutions Architect \u2013 Associate',
     ],
+    projectSlugs: [
+      'pitchpulse26',
+      'terraform-aws-production-vpc',
+      'the-acquisitions',
+      'gcp-terraform-infra',
+    ],
     notes: [
       'Default to private subnets; expose intentionally.',
       'Cost shows up in NAT Gateways and idle compute \u2014 watch both.',
-    ],
-  },
-  {
-    slug: 'scripting',
-    title: 'Scripting & Automation',
-    capability:
-      'Bash and Python automation for operational tasks and tooling.',
-    tools: ['Bash', 'Python', 'Linux'],
-    capabilities: [
-      'Bash automations for build, deploy, and ops tasks',
-      'Python scripts for data shaping and reporting',
-      'Idempotent scripts with clear exit codes and logging',
-      'Linux fundamentals: processes, networking, permissions',
-    ],
-    notes: [
-      'A 30-line Bash script with `set -euo pipefail` beats a 300-line one without it.',
-      'If a script ships to prod, it deserves tests.',
     ],
   },
 ];

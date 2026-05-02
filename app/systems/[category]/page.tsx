@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ProjectCard from '../../components/ProjectCard';
-import { getProjectsByCategory } from '../../data/projects';
+import { getProjectsBySlugs } from '../../data/projects';
 import {
   findSystemCategory,
   getAllSystemCategorySlugs,
@@ -34,7 +34,7 @@ export default async function SystemCategoryPage({ params }: RouteParams) {
   const meta = findSystemCategory(category);
   if (!meta) notFound();
 
-  const projects = getProjectsByCategory(meta.slug);
+  const projects = getProjectsBySlugs(meta.projectSlugs);
   const featured = projects.find((p) => p.featured) ?? projects[0];
   const others = projects.filter((p) => p !== featured);
 

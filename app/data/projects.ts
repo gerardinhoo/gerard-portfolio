@@ -12,11 +12,9 @@ export type ProjectDomain = 'work' | 'systems' | 'engineering';
  */
 export type SystemCategory =
   | 'infrastructure'
-  | 'containers'
   | 'cicd'
   | 'observability'
-  | 'cloud'
-  | 'scripting';
+  | 'cloud';
 
 export interface Project {
   /**
@@ -31,7 +29,8 @@ export interface Project {
    */
   domains: ProjectDomain[];
   /**
-   * Optional Systems sub-category. Required when `'systems'` is in `domains`.
+   * Optional primary Systems sub-category for project grouping.
+   * Dedicated Systems pages can also reference projects across categories.
    */
   category?: SystemCategory;
   title: string;
@@ -213,6 +212,13 @@ export function getProjectsByCategory(category: SystemCategory): Project[] {
   return projects.filter(
     (p) => p.domains.includes('systems') && p.category === category,
   );
+}
+
+/** Resolve a curated list of project slugs in display order. */
+export function getProjectsBySlugs(slugs: string[]): Project[] {
+  return slugs
+    .map((slug) => findProjectBySlug(slug))
+    .filter((project): project is Project => Boolean(project));
 }
 
 /** All slugs in the dataset (useful for `generateStaticParams`). */

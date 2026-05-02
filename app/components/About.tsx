@@ -1,6 +1,7 @@
 // app/components/About.tsx
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { skillCategories, getCategoryHeadingClass } from '../data/skills';
 
 export default function About() {
@@ -72,23 +73,20 @@ export default function About() {
 
           {/* CTA */}
           <div className="mt-10 flex flex-col items-center gap-3">
-            <a
-              href="https://github.com/gerardinhoo/Devops-Journey"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/systems"
               className="rounded-full bg-cyan-500 px-6 py-2 text-white font-medium shadow-md hover:bg-cyan-600 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
             >
               Explore My Cloud & Platform Work
-              <span className='sr-only'>(opens in new tab)</span>
-            </a>
+            </Link>
 
             <h6 className="text-slate-200 text-sm sm:text-base font-medium text-center">
               Hands-on projects across AWS, GCP, Terraform, Docker, CI/CD, and observability.
             </h6>
 
             <p className="text-slate-400 text-sm text-center max-w-xl">
-              A curated collection of cloud deployments, infrastructure-as-code builds, CI/CD pipelines, containerized applications, monitoring setups,
-              and troubleshooting work that supports the systems side of my portfolio.
+              A curated view of the infrastructure, delivery, cloud architecture,
+              and reliability work that supports the systems side of my portfolio.
             </p>
           </div>
         </div>

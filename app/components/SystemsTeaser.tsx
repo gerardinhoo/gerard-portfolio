@@ -26,8 +26,8 @@ export default function SystemsTeaser() {
             Platform, Infrastructure, & Reliability
           </h2>
           <p className='mt-3 text-sm md:text-base text-slate-400 max-w-2xl mx-auto'>
-            Six focus areas that cover how I design, automate, and operate the
-            platforms applications run on.
+            Four focused lenses for how I design, automate, deliver, and
+            support cloud systems in production.
           </p>
         </div>
 

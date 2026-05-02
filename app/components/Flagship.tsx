@@ -38,7 +38,7 @@ export default function Flagship() {
           viewport={{ once: true }}
           className='relative overflow-hidden rounded-3xl border border-orange-400/40 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 md:p-10 shadow-xl shadow-black/40'
         >
-          <span className='absolute right-5 top-5 inline-block rounded-full bg-orange-500/20 text-orange-300 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider'>
+          <span className='mb-4 inline-flex rounded-full bg-orange-500/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-orange-300 sm:absolute sm:right-5 sm:top-3 sm:mb-0'>
             <span aria-hidden='true'>★</span> Flagship Project
           </span>
 
