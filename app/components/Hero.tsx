@@ -16,7 +16,7 @@ export default function Hero() {
         </h1>
         <p className='mt-5 text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed'>
           I build product-facing applications and the cloud infrastructure,
-          CI/CD, and observability that keep them reliable &mdash; from React
+          CI/CD, and observability that keep them reliable. From React
           and Node.js code to AWS deployment and operational support.
         </p>
         <p className='mt-4 text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-cyan-400'>
