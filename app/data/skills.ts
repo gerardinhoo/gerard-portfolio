@@ -11,49 +11,40 @@ export interface SkillCategory {
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: 'DevOps & Cloud Engineering',
+    title: 'Cloud & Platform',
     variant: 'primary',
     items: [
       { name: 'AWS', icon: 'aws/aws.svg' },
-      { name: 'GCP', icon: 'googlecloud/googlecloud-original.svg' },
       { name: 'Terraform', icon: 'terraform/terraform-original.svg' },
-      { name: 'Ansible', icon: 'ansible/ansible-original.svg' },
       { name: 'Docker', icon: 'docker/docker-original.svg' },
       { name: 'GitHub Actions', icon: 'github/github-original.svg' },
-      { name: 'Jenkins', icon: 'jenkins/jenkins-original.svg' },
       { name: 'CloudWatch', icon: 'aws/aws.svg' },
-      { name: 'Prometheus', icon: 'prometheus/prometheus-original.svg' },
-      { name: 'Grafana', icon: 'grafana/grafana-original.svg' },
-      { name: 'Trivy', icon: 'trivy/trivy-original.svg' },
       { name: 'Networking / VPC', icon: 'aws/aws.svg' },
       { name: 'IAM / Security', icon: 'aws/aws.svg' },
     ],
   },
   {
-    title: 'Software Engineering',
+    title: 'Application Engineering',
     variant: 'secondary',
     items: [
-      { name: 'JavaScript', icon: 'javascript/javascript-original.svg' },
       { name: 'TypeScript', icon: 'typescript/typescript-original.svg' },
       { name: 'Node.js', icon: 'nodejs/nodejs-original.svg' },
       { name: 'React', icon: 'react/react-original.svg' },
       { name: 'Next.js', icon: 'nextjs/nextjs-original.svg' },
       { name: 'Express', icon: 'express/express-original.svg' },
       { name: 'PostgreSQL', icon: 'postgres/postgres-original.svg' },
-      { name: 'MongoDB', icon: 'mongodb/mongodb-original.svg' },
       { name: 'Tailwind CSS', icon: '/icons/tailwindcss.svg' },
     ],
   },
   {
-    title: 'Tools & Workflow',
+    title: 'Workflow & Delivery',
     variant: 'default',
     items: [
       { name: 'Git', icon: 'git/git-original.svg' },
       { name: 'Linux', icon: 'linux/linux-original.svg' },
       { name: 'Bash / Shell Scripting', icon: 'bash/bash-original.svg' },
-      { name: 'Jira', icon: 'jira/jira-original.svg' },
       { name: 'Confluence', icon: '/icons/confluence.svg' },
-      { name: 'Agile Methodologies', icon: '/icons/agile.svg' },
+      { name: 'Agile Delivery', icon: '/icons/agile.svg' },
     ],
   },
 ];

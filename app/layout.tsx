@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import SkipLink from './components/SkipLink';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -24,9 +27,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const siteConfig = {
-  title: 'Gerard Eklu - Cloud & DevOps Engineer',
+  title: 'Gerard Eklu - Full-Stack & Cloud Platform Engineer',
   description:
-    'Engineering reliable, automated cloud systems across AWS & GCP with a DevOps-driven approach.',
+    'I build product-facing applications and the cloud infrastructure, CI/CD, and observability that keep them reliable.',
   url: 'https://gerardeklu.dev',
   image: '/og-image.png', // Add a 1200x630 image to /public
 } as const;
@@ -59,7 +62,7 @@ export const metadata: Metadata = {
         url: siteConfig.image,
         width: 1200,
         height: 630,
-        alt: 'Gerard Eklu - Cloud & DevOps Engineer',
+        alt: 'Gerard Eklu - Full-Stack & Cloud Platform Engineer',
       },
     ],
   },
@@ -87,9 +90,12 @@ export default function RootLayout({
         <link rel='preconnect' href='https://cdn.jsdelivr.net' crossOrigin='anonymous' />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${spaceGrotesk.variable} antialiased font-sans`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${spaceGrotesk.variable} min-h-screen bg-slate-950 text-slate-100 antialiased font-sans flex flex-col`}
       >
-        {children}
+        <SkipLink />
+        <Navbar />
+        <main id='main-content' className='flex-1'>{children}</main>
+        <Footer />
       </body>
     </html>
   );
