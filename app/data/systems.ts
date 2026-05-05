@@ -98,6 +98,7 @@ export const systemCategories: SystemCategoryMeta[] = [
     // not the delivery pipeline or container runtime they happen to use.
     projectSlugs: [
       'pitchpulse26',
+      'cloud-native-node-api',
       'terraform-aws-production-vpc',
       'gcp-terraform-infra',
     ],
