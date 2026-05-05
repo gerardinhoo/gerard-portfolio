@@ -15,11 +15,6 @@ export default function Resume() {
 
         <div className='mt-10 flex justify-center'>
           <div className='w-full max-w-2xl bg-slate-900/80 border border-slate-800 rounded-3xl px-8 py-8 shadow-lg shadow-black/25 flex flex-col items-center gap-4'>
-            <p className='text-sm leading-relaxed text-slate-300 max-w-xl'>
-              The resume highlights product engineering, cloud infrastructure,
-              CI/CD, and production delivery experience across flagship and
-              supporting projects.
-            </p>
             <a
               href='/GerardEKLU-CLOUD-DEVOPS-ENGINEER.pdf'
               target='_blank'

@@ -1,9 +1,10 @@
 /**
  * High-level area of the portfolio a project appears in.
- * A project can belong to multiple domains (e.g. PitchPulse26 is both
- * flagship `work` and a full-stack `engineering` project).
+ * A project can belong to multiple domains (e.g. a flagship project may be
+ * featured under `work` and surfaced again under one or more `systems`
+ * categories).
  */
-export type ProjectDomain = 'work' | 'systems' | 'engineering';
+export type ProjectDomain = 'work' | 'systems';
 
 /**
  * Sub-category used by the Systems section to group infra/devops projects.
@@ -18,14 +19,12 @@ export type SystemCategory =
 
 export interface Project {
   /**
-   * URL-safe identifier used for case study routes
-   * (e.g. `/work/pitchpulse26`, `/engineering/pitchpulse26`).
+   * URL-safe identifier used for case study routes (e.g. `/work/pitchpulse26`).
    */
   slug: string;
   /**
    * Which top-level sections this project appears in. Projects can belong to
-   * more than one (e.g. flagship full-stack projects appear in both `work`
-   * and `engineering`).
+   * more than one (e.g. a featured project that also surfaces under Systems).
    */
   domains: ProjectDomain[];
   /**
@@ -53,7 +52,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: 'pitchpulse26',
-    domains: ['work', 'engineering'],
+    domains: ['work'],
     flagship: true,
     featured: true,
     title: 'PitchPulse26: Full-Stack World Cup Prediction Platform',
@@ -177,7 +176,7 @@ export const projects: Project[] = [
 
   {
     slug: 'theexm-applications',
-    domains: ['engineering', 'work'],
+    domains: ['work'],
     title: 'Enterprise Job Platform: Cloud Delivery with AWS Amplify',
     description:
       'Delivered a production web application for enterprise position management under ExM Technologies. Owned cloud deployment via AWS Amplify. CI/CD integration, environment configuration, and hosting. Built frontend with Next.js, TypeScript, and Tailwind CSS with API integrations for real-time data.',

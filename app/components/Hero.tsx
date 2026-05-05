@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import ParticlesBackground from './ParticlesBackground';
 
 export default function Hero() {
@@ -42,18 +43,18 @@ export default function Hero() {
         </div>
 
         <div className='mt-10 flex flex-wrap items-center justify-center md:justify-start gap-4'>
-          <a
-            href='#flagship'
-            className='inline-flex items-center justify-center rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-cyan-400'
+          <Link
+            href='/work/pitchpulse26'
+            className='inline-flex items-center justify-center rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300'
           >
             View Flagship: PitchPulse26
-          </a>
-          <a
-            href='#systems'
-            className='inline-flex items-center justify-center rounded-full border border-slate-600 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-slate-400'
+          </Link>
+          <Link
+            href='/systems'
+            className='inline-flex items-center justify-center rounded-full border border-slate-600 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300'
           >
             Explore Systems
-          </a>
+          </Link>
         </div>
       </div>
     </section>

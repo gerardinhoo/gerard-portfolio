@@ -94,10 +94,11 @@ export const systemCategories: SystemCategoryMeta[] = [
       'Least-privilege IAM roles for compute and CI/CD',
       'AWS Certified Solutions Architect \u2013 Associate',
     ],
+    // Curated to projects whose primary value is the architecture itself,
+    // not the delivery pipeline or container runtime they happen to use.
     projectSlugs: [
       'pitchpulse26',
       'terraform-aws-production-vpc',
-      'the-acquisitions',
       'gcp-terraform-infra',
     ],
     notes: [
