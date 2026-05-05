@@ -126,6 +126,27 @@ export const projects: Project[] = [
   },
 
   {
+    slug: 'cloud-native-node-api',
+    domains: ['work', 'systems'],
+    category: 'cloud',
+    featured: true,
+    title: 'Cloud-Native Node API: ECS Fargate & EKS Deployments',
+    description:
+      'Deployed the same Node.js + Express API to AWS two ways. ECS Fargate behind an ALB, and Amazon EKS with a managed node group and a LoadBalancer Service to compare the operational surface, networking model, and cost shape of both AWS container platforms end to end. Documented the build to ECR, both deployment paths, and end-to-end traffic verification with side-by-side console and kubectl evidence.',
+    tags: [
+      'AWS',
+      'ECS Fargate',
+      'EKS',
+      'Kubernetes',
+      'Docker',
+      'ECR',
+      'ALB',
+      'VPC',
+      'Node.js',
+    ],
+    github: 'https://github.com/gerardinhoo/cloud-native-node-api',
+  },
+  {
     slug: 'terraform-aws-production-vpc',
     domains: ['work', 'systems'],
     category: 'infrastructure',
