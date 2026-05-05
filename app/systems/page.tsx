@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -7,7 +6,7 @@ import { systemCategories } from '../data/systems';
 export const metadata: Metadata = {
   title: 'Systems · Gerard Eklu',
   description:
-    'Platform, infrastructure, and reliability work: IaC, containers, CI/CD, observability, cloud architecture, and scripting.',
+    'Platform, infrastructure, and reliability work across four lenses: Infrastructure as Code, CI/CD & Delivery, Reliability & Observability, and Cloud Architecture.',
   alternates: { canonical: '/systems' },
 };
 
