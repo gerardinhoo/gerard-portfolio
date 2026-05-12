@@ -123,23 +123,6 @@ export default async function SystemCategoryPage({ params }: RouteParams) {
           </section>
         )}
 
-        {meta.notes.length > 0 && (
-          <section>
-            <h2 className='font-heading text-lg uppercase tracking-[0.2em] text-cyan-400 text-center'>
-              Notes
-            </h2>
-            <ul className='mt-6 mx-auto max-w-2xl space-y-3'>
-              {meta.notes.map((note) => (
-                <li
-                  key={note}
-                  className='text-sm md:text-base text-slate-400 italic'
-                >
-                  &mdash; {note}
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
       </div>
     </div>
   );
